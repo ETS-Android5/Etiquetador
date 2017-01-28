@@ -3,84 +3,21 @@
 
     <item
         is-multidex="false"
-        jar="D:\Users\razerjon24\AndroidProjects\Etiquetador\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
-        jumboMode="true"
+        jar="/Users/jorge/.gradle/caches/modules-2/files-2.1/com.google.zxing/core/3.2.0/e019d15a13a9786f881141d2df6654b8510bce8b/core-3.2.0.jar"
+        jumboMode="false"
         optimize="true"
-        revision="25.0.2"
-        sha1="2b31a625b0a3aed77e934e6b2a38d96e05f1c269">
-        <dex dex="D:\Users\razerjon24\AndroidProjects\Etiquetador\app\build\intermediates\pre-dexed\debug\instant-run-bootstrap_34c0048bb39ef7c7b6ca845d4485d42f8f3889a1.jar" />
+        revision="23.0.2"
+        sha1="e019d15a13a9786f881141d2df6654b8510bce8b">
+        <dex dex="/Users/jorge/Documents/CVR/CNEL/Etiquetador/app/build/intermediates/pre-dexed/debug/core-3.2.0_1b9f0ad46e13d778ba8a7bfdf2b115085d1d5961.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="D:\Users\razerjon24\AndroidProjects\Etiquetador\app\build\intermediates\exploded-aar\com.android.support\support-v4\25.1.0\jars\classes.jar"
-        jumboMode="true"
+        jar="/Users/jorge/Documents/CVR/CNEL/Etiquetador/app/build/intermediates/exploded-aar/com.journeyapps/zxing-android-embedded/3.0.2/jars/classes.jar"
+        jumboMode="false"
         optimize="true"
-        revision="25.0.2"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="D:\Users\razerjon24\AndroidProjects\Etiquetador\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-25.1.0_a3d178a08bb898f8b4a2ac47adf547fa90641ee7.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\Users\razerjon24\AndroidProjects\Etiquetador\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.1.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="0a0ef86b7fa568a52bf6214a0326ca1f1d618da7">
-        <dex dex="D:\Users\razerjon24\AndroidProjects\Etiquetador\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-utils-25.1.0_10bce6cce41edae0ac322c0abe7cbb09ee61e00d.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\Users\razerjon24\AndroidProjects\Etiquetador\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.1.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="aee64634871d88a419d59eb743c1258a60f19700">
-        <dex dex="D:\Users\razerjon24\AndroidProjects\Etiquetador\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-ui-25.1.0_95c959bb812aea40afce2743c877ef133577b32d.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\Users\razerjon24\AndroidProjects\Etiquetador\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.1.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="2a53c4f3518116b8c6aee0e477233f0f7da8616f">
-        <dex dex="D:\Users\razerjon24\AndroidProjects\Etiquetador\app\build\intermediates\pre-dexed\debug\com.android.support-support-fragment-25.1.0_eddf8808c6dd9cf7f6aec57a532a7ee2c13e7b11.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\Users\razerjon24\AndroidProjects\Etiquetador\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.1.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="f02263e35e52668dd17b73bf961437e3d562b35f">
-        <dex dex="D:\Users\razerjon24\AndroidProjects\Etiquetador\app\build\intermediates\pre-dexed\debug\com.android.support-support-media-compat-25.1.0_e84b0885d3f4bbd39fa29d1437731b41de1040fd.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\razerjon24\AppData\Local\Android\Sdk\extras\android\m2repository\com\android\support\support-annotations\25.1.0\support-annotations-25.1.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="64cb6b229a8bdfd907bc8dd46839a0053e4c018d">
-        <dex dex="D:\Users\razerjon24\AndroidProjects\Etiquetador\app\build\intermediates\pre-dexed\debug\support-annotations-25.1.0_c7f821535812730dd939440c16005af973278de5.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\Users\razerjon24\AndroidProjects\Etiquetador\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="e33c053d129025413319b21fa0648e7506650cc2">
-        <dex dex="D:\Users\razerjon24\AndroidProjects\Etiquetador\app\build\intermediates\pre-dexed\debug\instant-run_b8c51e885eaea4cfb28f343ad0818d7aa06676d1.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\Users\razerjon24\AndroidProjects\Etiquetador\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.1.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="ca3c7aa31e2726a400a6e552b93cb9f63c9a1e6d">
-        <dex dex="D:\Users\razerjon24\AndroidProjects\Etiquetador\app\build\intermediates\pre-dexed\debug\com.android.support-support-compat-25.1.0_0b25aa20869446440dd7136e53dfa588f3481df1.jar" />
+        revision="23.0.2"
+        sha1="744a4b394a9a7db8a4c4680836d8544802a9cd64">
+        <dex dex="/Users/jorge/Documents/CVR/CNEL/Etiquetador/app/build/intermediates/pre-dexed/debug/com.journeyapps-zxing-android-embedded-3.0.2_1191aefe7ba5a0c42cca587ca08bc648707ee85e.jar" />
     </item>
 
 </items>

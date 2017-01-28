@@ -13,7 +13,7 @@ public class Login extends Activity {
 		setContentView(R.layout.activity_login);
 	}
 
-	protected void verifyUser(View view) {
+	public void verifyUser(View view) {
 		String user = ((TextView) findViewById(R.id.user)).getText().toString();
 		String password = ((TextView) findViewById(R.id.password)).getText().toString();
 		if(user.equals("cnel") && password.equals("123")){

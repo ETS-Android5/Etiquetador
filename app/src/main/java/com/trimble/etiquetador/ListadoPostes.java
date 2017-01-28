@@ -8,12 +8,14 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.content.Intent;
 
 import com.trimble.etiquetador.adapters.PosteAdapter;
 import com.trimble.etiquetador.model.Poste;
@@ -44,11 +46,18 @@ public class ListadoPostes extends Activity {
             throw sqle;
         }
         final ListView listviewPoste = (ListView) findViewById(R.id.lista);
+        listviewPoste.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position,long id) {
+                Intent intent = new Intent(ListadoPostes.this, InfoPoste.class);
+                startActivity(intent);
+            }
+        });
         posteadapter = new PosteAdapter(this,postes);
         listviewPoste.setAdapter(posteadapter);
     }
 
-    protected void checkLista(View view){
+    public void checkLista(View view){
         String posteid = ((TextView) findViewById(R.id.posteid)).getText().toString();
         SQLiteDatabase db = myDbHelper.getReadableDatabase();
         String mySql = "SELECT * FROM postes WHERE posteid = '"+posteid+"';";

@@ -13,7 +13,7 @@ public class Menu extends Activity {
         setContentView(R.layout.activity_menu);
     }
 
-    protected void iniciarMedicion(View view){
+    public void iniciarMedicion(View view){
         Intent intent = new Intent(this, ListadoPostes.class);
         startActivity(intent);
     }
