@@ -56,10 +56,12 @@
         <activity android:name="com.trimble.etiquetador.ListadoPostes" />
         <activity android:name="com.trimble.etiquetador.Menu" />
         <activity android:name="com.trimble.etiquetador.AddPoste" />
-        <activity android:name="com.trimble.etiquetador.InfoPoste" >
-        </activity>
+        <activity
+            android:name="com.trimble.etiquetador.InfoPoste"
+            android:windowSoftInputMode="stateHidden" />
         <activity android:name="com.trimble.etiquetador.CaptureActivityPortrait" />
         <activity android:name="com.trimble.etiquetador.ConfirmationActivity" />
+        <activity android:name="com.trimble.etiquetador.RegistrarCable" />
         <activity
             android:name="com.journeyapps.barcodescanner.CaptureActivity"
             android:clearTaskOnLaunch="true"

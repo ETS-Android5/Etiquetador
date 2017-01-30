@@ -38,7 +38,6 @@ public class PosteAdapter extends ArrayAdapter<Poste> {
         final Poste currentPoste = this.postes.get(position);
         holder.codigo.setText(currentPoste.getCodigo());
         holder.sector.setText(currentPoste.getSector());
-
         return convertView;
     }
 }

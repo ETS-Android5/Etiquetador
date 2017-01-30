@@ -35,7 +35,7 @@
         android:text="Login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/button"
+        android:id="@+id/fin"
         android:textColor="@android:color/white"
         android:onClick="verifyUser"
         android:layout_marginBottom="133dp"
@@ -51,7 +51,7 @@
         android:textColor="@android:color/black"
         android:background="@android:color/darker_gray"
         android:layout_marginBottom="69dp"
-        android:layout_above="@+id/button"
+        android:layout_above="@+id/fin"
         android:layout_alignLeft="@+id/user" />
 
     <TextView

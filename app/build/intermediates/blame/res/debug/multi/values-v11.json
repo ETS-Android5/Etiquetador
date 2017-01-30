@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v11/values-v11.xml",
+        "outputFile": "D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v11\\values-v11.xml",
         "map": [
             {
                 "to": {
@@ -12,7 +12,7 @@
                     "endOffset": 150
                 },
                 "from": {
-                    "file": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/app/build/intermediates/exploded-aar/com.journeyapps/zxing-android-embedded/3.0.2/res/values-v11/values.xml",
+                    "file": "D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\build\\intermediates\\exploded-aar\\com.journeyapps\\zxing-android-embedded\\3.0.2\\res\\values-v11\\values.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,

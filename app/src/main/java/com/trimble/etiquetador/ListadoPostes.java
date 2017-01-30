@@ -1,6 +1,7 @@
 package com.trimble.etiquetador;
 
 import android.app.Activity;
+import android.content.Context;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
@@ -8,6 +9,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ListAdapter;
@@ -29,32 +31,37 @@ public class ListadoPostes extends Activity {
     protected DataBaseHelper myDbHelper;
     protected ArrayList<Poste> postes = new ArrayList<Poste>();
     protected PosteAdapter posteadapter;
+    protected InputMethodManager inputManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listado_postes);
+        final ListView listviewPoste = (ListView) findViewById(R.id.lista);
         myDbHelper = new DataBaseHelper(this);
-        try {
-            myDbHelper.createDataBase();
-        } catch (IOException ioe) {
-            throw new Error("Unable to create database");
-        }
         try {
             myDbHelper.openDataBase();
         }catch(SQLException sqle){
-            throw sqle;
+            Log.w("Database",sqle.getMessage());
         }
-        final ListView listviewPoste = (ListView) findViewById(R.id.lista);
+        posteadapter = new PosteAdapter(this,postes);
         listviewPoste.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position,long id) {
                 Intent intent = new Intent(ListadoPostes.this, InfoPoste.class);
+                Poste tmpposte = postes.get(position);
+                intent.putExtra("IdPoste", tmpposte.getId());
+                intent.putExtra("CodigoPoste",tmpposte.getCodigo());
+                intent.putExtra("Sector",tmpposte.getSector());
+                intent.putExtra("NCables",tmpposte.getNcables());
+                postes.clear();
+                posteadapter.notifyDataSetChanged();
                 startActivity(intent);
             }
         });
-        posteadapter = new PosteAdapter(this,postes);
         listviewPoste.setAdapter(posteadapter);
+        inputManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+
     }
 
     public void checkLista(View view){
@@ -64,9 +71,10 @@ public class ListadoPostes extends Activity {
         Cursor c = db.rawQuery(mySql, null);
         try{
             c.moveToFirst();
+            inputManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(),InputMethodManager.HIDE_NOT_ALWAYS);
             posteadapter.notifyDataSetChanged();
             do{
-                postes.add(new Poste(c.getString(c.getColumnIndex("posteid")), c.getString(c.getColumnIndex("sector"))));
+                postes.add(new Poste(c.getString(c.getColumnIndex("posteid")), c.getString(c.getColumnIndex("sector")),c.getInt(c.getColumnIndex("_id")),c.getInt(c.getColumnIndex("ncables"))));
                 c.moveToNext();
             }while(!c.isAfterLast());
 

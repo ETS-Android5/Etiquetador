@@ -14,12 +14,19 @@ import com.google.zxing.integration.android.IntentResult;
 public class ConfirmationActivity extends Activity implements View.OnClickListener {
     private TextView txtCode;
     private Button btnVolver;
+    private int posteid;
+    private String barCode;
+    private String sector;
+    private String codigoposte;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_confirmation);
         Intent intent = getIntent();
-        String barCode = intent.getStringExtra("barCode");
+        barCode = intent.getStringExtra("barCode");
+        posteid = intent.getIntExtra("posteId",0);
+        sector = intent.getStringExtra("sector");
+        codigoposte = intent.getStringExtra("codigoPoste");
         btnVolver= (Button) findViewById(R.id.btnVolver);
         btnVolver.setOnClickListener(this);
         txtCode = (TextView) findViewById(R.id.txtCode);
@@ -36,6 +43,15 @@ public class ConfirmationActivity extends Activity implements View.OnClickListen
         integrator.setCameraId(0);  // Use a specific camera of the device
         integrator.setBeepEnabled(true);
         integrator.initiateScan();
+    }
+
+    public void registrarCable(View view){
+        Intent intent = new Intent(this, RegistrarCable.class);
+        intent.putExtra("barCode",barCode);
+        intent.putExtra("posteId",posteid);
+        intent.putExtra("sector",sector);
+        intent.putExtra("codigoPoste",codigoposte);
+        startActivity(intent);
     }
 
     public void onActivityResult(int requestCode, int resultCode, Intent data) {

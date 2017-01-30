@@ -1,6 +1,7 @@
 package com.trimble.etiquetador;
 
 import android.content.Context;
+import android.database.sqlite.SQLiteCantOpenDatabaseException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -74,9 +75,12 @@ public class DataBaseHelper extends SQLiteOpenHelper {
             String myPath = DB_PATH + DB_NAME;
             checkDB = SQLiteDatabase.openDatabase(myPath, null, SQLiteDatabase.OPEN_READONLY);
 
-        }catch(SQLiteException e){
+        }catch(SQLiteCantOpenDatabaseException e){
             //database does't exist yet.
+            Log.w("Database","Database doesn't exist yet");
 
+        }catch (Exception e){
+            Log.w("Database",e.getMessage());
         }
 
         if(checkDB != null){

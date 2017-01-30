@@ -17,10 +17,11 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="El Codigo de Barra esta correcto ? "/>
+            android:text="El Código de Barra esta correcto ? "/>
 
         <Button
             android:id="@+id/btnCorrecto"
+            android:onClick="registrarCable"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Si"/>
