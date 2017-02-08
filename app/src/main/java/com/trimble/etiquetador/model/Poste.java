@@ -1,6 +1,8 @@
 package com.trimble.etiquetador.model;
 
-public class Poste {
+import java.io.Serializable;
+
+public class Poste implements Serializable{
     private String codigo;
     private String sector;
     private int _id;

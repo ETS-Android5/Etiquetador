@@ -13,6 +13,8 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_GPS" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION" />
     <uses-permission android:name="android.permission.CAMERA" /> <!-- Don't require camera, as this requires a rear camera. This allows it to work on the Nexus 7 -->
     <uses-feature
         android:name="android.hardware.camera"
@@ -37,7 +39,7 @@
     <application
         android:name="com.android.tools.fd.runtime.BootstrapApplication"
         android:allowBackup="true"
-        android:icon="@drawable/ic_launcher"
+        android:icon="@drawable/cnel"
         android:label="Etiquetador" >
         <uses-library
             android:name="com.trimble.mcs"
@@ -54,15 +56,42 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.trimble.etiquetador.ListadoPostes" />
-        <activity android:name="com.trimble.etiquetador.Menu" />
-        <activity android:name="com.trimble.etiquetador.AddPoste" />
+        <activity
+            android:name="com.trimble.etiquetador.ListadoPostes"
+            android:background="@color/white"
+            android:label="Nueva Medición"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name="com.trimble.etiquetador.Menu"
+            android:background="@color/white"
+            android:label="Menú" />
         <activity
             android:name="com.trimble.etiquetador.InfoPoste"
+            android:background="@color/white"
+            android:label="Listado de Cables"
             android:windowSoftInputMode="stateHidden" />
         <activity android:name="com.trimble.etiquetador.CaptureActivityPortrait" />
         <activity android:name="com.trimble.etiquetador.ConfirmationActivity" />
-        <activity android:name="com.trimble.etiquetador.RegistrarCable" />
+        <activity
+            android:name="com.trimble.etiquetador.RegistrarCable"
+            android:background="@color/white"
+            android:label="Registrar Nuevo Cable" />
+        <activity
+            android:name="com.trimble.etiquetador.PostesPendientes"
+            android:background="@color/white"
+            android:label="Postes Pendientes" />
+        <activity
+            android:name="com.trimble.etiquetador.RegistrarPoste"
+            android:background="@color/white"
+            android:label="Registrar Nuevo Poste" />
+        <activity
+            android:name="com.trimble.etiquetador.ListadoRepetidos"
+            android:background="@color/white"
+            android:label="Postes Registrados" />
+        <activity
+            android:name="com.trimble.etiquetador.listaFinalizados"
+            android:background="@color/white"
+            android:label="Postes Finalizados" />
         <activity
             android:name="com.journeyapps.barcodescanner.CaptureActivity"
             android:clearTaskOnLaunch="true"

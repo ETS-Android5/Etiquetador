@@ -11,7 +11,7 @@ import android.widget.TextView;
 import java.io.IOException;
 
 public class Login extends Activity {
-	protected DataBaseHelper myDbHelper;
+	public DataBaseHelper myDbHelper;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);

@@ -79,7 +79,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
             //database does't exist yet.
             Log.w("Database","Database doesn't exist yet");
 
-        }catch (Exception e){
+        }catch (SQLiteException e){
             Log.w("Database",e.getMessage());
         }
 

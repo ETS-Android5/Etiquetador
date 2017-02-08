@@ -1,4 +1,4 @@
-#Mon Jan 30 12:05:49 COT 2017
+#Tue Feb 07 23:05:51 COT 2017
 base.0=D\:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main
 renamed.0=classes.dex
 file.0=D\:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main\\classes.dex

@@ -16,14 +16,6 @@ tools:context="com.trimble.etiquetador.InfoPoste">
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true" />
 
-    <ListView
-        android:layout_width="match_parent"
-        android:layout_height="250dip"
-        android:layout_above="@+id/boton"
-        android:id="@+id/listacables"
-        android:layout_alignParentLeft="true"
-        android:layout_marginBottom="28dp" />
-
     <TextView
         android:text="Número de cables"
         android:layout_width="wrap_content"
@@ -45,22 +37,6 @@ tools:context="com.trimble.etiquetador.InfoPoste">
         android:layout_below="@+id/viewsector"
         android:layout_toRightOf="@+id/textView10"
         android:layout_marginLeft="19dp" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="+ Agregar Cable"
-        android:id="@+id/boton"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Finalizar"
-        android:id="@+id/fin"
-        android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/viewcodigo" />
 
     <TextView
         android:text="TextView"
@@ -88,6 +64,43 @@ tools:context="com.trimble.etiquetador.InfoPoste">
         android:layout_alignBaseline="@+id/textView10"
         android:layout_alignBottom="@+id/textView10"
         android:layout_alignParentRight="true" />
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="200dip"
+        android:id="@+id/listacables"
+        android:layout_marginTop="36dp"
+        android:layout_below="@+id/guardar"
+        android:layout_alignParentLeft="true" />
+
+    <Button
+        android:text="Regresar"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:onClick="regresarListadoPostes"
+        android:id="@+id/button5"
+        android:layout_alignBaseline="@+id/boton"
+        android:layout_alignBottom="@+id/boton"
+        android:layout_alignParentLeft="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:text="Finalizar"
+        android:id="@+id/fin"
+        android:onClick="returnListaPoste"
+        android:layout_alignBaseline="@+id/boton"
+        android:layout_alignBottom="@+id/boton"
+        android:layout_alignParentRight="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:text="Agregar"
+        android:id="@+id/boton"
+        android:layout_below="@+id/listacables"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="18dp" />
 
     <!--
     <TextView

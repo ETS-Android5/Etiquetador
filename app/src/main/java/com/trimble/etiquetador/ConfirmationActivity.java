@@ -1,15 +1,22 @@
 package com.trimble.etiquetador;
 
 import android.app.Activity;
+import android.database.Cursor;
+import android.database.SQLException;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.content.Intent;
+import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
+import com.trimble.etiquetador.model.Poste;
 
 public class ConfirmationActivity extends Activity implements View.OnClickListener {
     private TextView txtCode;
@@ -18,6 +25,8 @@ public class ConfirmationActivity extends Activity implements View.OnClickListen
     private String barCode;
     private String sector;
     private String codigoposte;
+    private DataBaseHelper myDbHelper;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,12 +55,28 @@ public class ConfirmationActivity extends Activity implements View.OnClickListen
     }
 
     public void registrarCable(View view){
-        Intent intent = new Intent(this, RegistrarCable.class);
-        intent.putExtra("barCode",barCode);
-        intent.putExtra("posteId",posteid);
-        intent.putExtra("sector",sector);
-        intent.putExtra("codigoPoste",codigoposte);
-        startActivity(intent);
+        myDbHelper = new DataBaseHelper(this);
+        try {
+            myDbHelper.openDataBase();
+        }catch(SQLException sqle){
+            Log.w("Database",sqle.getMessage());
+        }
+        SQLiteDatabase db = myDbHelper.getReadableDatabase();
+        String mySql = "SELECT _id FROM cables WHERE _id = '"+barCode+"';";
+        Cursor c = db.rawQuery(mySql, null);
+        if(c.getCount() == 1){
+            Toast toast = Toast.makeText(this,"Ya existe un Tag con ese ID",Toast.LENGTH_LONG);
+            toast.setGravity(Gravity.TOP| Gravity.LEFT, 80, 310);
+            toast.show();
+        }
+        else{
+            Intent intent = new Intent(this, RegistrarCable.class);
+            intent.putExtra("barCode",barCode);
+            intent.putExtra("posteId",posteid);
+            intent.putExtra("sector",sector);
+            intent.putExtra("codigoPoste",codigoposte);
+            startActivity(intent);
+        }
     }
 
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -63,6 +88,7 @@ public class ConfirmationActivity extends Activity implements View.OnClickListen
                 String code=result.getContents();
                 txtCode = (TextView) findViewById(R.id.txtCode);
                 txtCode.setText(code);
+                barCode = code;
             }
         } else {
             // This is important, otherwise the result will not be passed to the fragment

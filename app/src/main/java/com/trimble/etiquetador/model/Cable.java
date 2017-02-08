@@ -2,20 +2,25 @@ package com.trimble.etiquetador.model;
 
 
 public class Cable {
+    private String dimension;
     private String tagid;
     private String tipo;
     private String uso;
     private boolean escable;
     private String operadora;
 
-    public Cable(String tagid, String tipo, String uso, boolean escable, String operadora){
+    public Cable(String tagid, String tipo, String uso, boolean escable, String operadora, String dimension){
         this.tagid = tagid;
         this.tipo = tipo;
         this.uso = uso;
         this.escable = escable;
         this.operadora = operadora;
+        this.dimension = dimension;
     }
 
+    public String getDimension() {
+        return dimension;
+    }
     public boolean isEscable() {
         return escable;
     }
@@ -34,6 +39,10 @@ public class Cable {
 
     public String getUso() {
         return uso;
+    }
+
+    public void setDimension(String dimension) {
+        this.dimension = dimension;
     }
 
     public void setEscable(boolean escable) {

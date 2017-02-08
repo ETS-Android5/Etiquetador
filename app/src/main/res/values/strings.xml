@@ -4,5 +4,7 @@
     <string name="app_name">FlashlightDemo</string>
     <string name="light_off">OFF</string>
     <string name="light_on">ON</string>
+    <color name="blue">#1D417D</color>
+    <color name="white">#FFFFFF</color>
 
 </resources>

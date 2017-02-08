@@ -32,7 +32,7 @@ public class CableAdapter extends ArrayAdapter<Cable> {
     @Override
     public View getView(int position, View convertView, ViewGroup parent){
         if(convertView == null){
-            convertView = LayoutInflater.from(context).inflate(R.layout.poste_item,parent,false);
+            convertView = LayoutInflater.from(context).inflate(R.layout.cable_item,parent,false);
             ViewHolder viewHolder = new ViewHolder();
             viewHolder.tagid = (TextView) convertView.findViewById(R.id.viewtagid);
             viewHolder.operadora = (TextView) convertView.findViewById(R.id.viewoperadora);
@@ -43,15 +43,16 @@ public class CableAdapter extends ArrayAdapter<Cable> {
         }
         ViewHolder holder = (ViewHolder) convertView.getTag();
         final Cable currentCable = this.cables.get(position);
-        holder.tagid.setText(currentCable.getTagid());
-        holder.operadora.setText(currentCable.getOperadora());
-        holder.tipo.setText(currentCable.getTipo());
-        holder.uso.setText(currentCable.getUso());
+        holder.tagid.setText("TagId: "+currentCable.getTagid());
+        holder.operadora.setText("Operadora: "+currentCable.getOperadora());
+        holder.tipo.setText("Tipo: "+currentCable.getTipo());
         if(currentCable.isEscable()){
             holder.escable.setText("Cable");
+            holder.uso.setText("Uso: "+currentCable.getUso());
         }
         else{
-            holder.escable.setText("NoEsCable");
+            holder.escable.setText("Equipo de Telecomunicaciones");
+            holder.uso.setText("Dimensión: "+currentCable.getDimension());
         }
         return convertView;
     }

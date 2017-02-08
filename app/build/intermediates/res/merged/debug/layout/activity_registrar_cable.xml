@@ -27,6 +27,18 @@
         android:layout_toRightOf="@+id/textView13"
         android:layout_marginLeft="67dp" />
 
+    <EditText
+        android:inputType="textPersonName"
+        android:visibility="invisible"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/viewDimension"
+        android:ems="5"
+        android:layout_alignBaseline="@+id/textView13"
+        android:layout_alignBottom="@+id/textView13"
+        android:layout_toRightOf="@+id/textView13"
+        android:layout_marginLeft="67dp" />
+
     <Spinner
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -34,7 +46,6 @@
         android:layout_alignBaseline="@+id/textView14"
         android:layout_alignBottom="@+id/textView14"
         android:layout_alignLeft="@+id/spinnerUso" />
-
 
     <TextView
         android:text="Uso:"
@@ -85,7 +96,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="registrarCableBase"
-        android:id="@+id/button4"
+        android:id="@+id/registrar"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true" />
 
@@ -123,6 +134,35 @@
         android:layout_alignBaseline="@+id/textView11"
         android:layout_alignBottom="@+id/textView11"
         android:layout_alignLeft="@+id/spinnerUso"
-        android:layout_marginLeft="12dp" />
+         />
+
+    <CheckBox
+        android:text="¿Es equipo?"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/checkBoxCable"
+        android:layout_alignBaseline="@+id/viewtagidcable"
+        android:layout_alignBottom="@+id/viewtagidcable"
+        android:layout_alignParentRight="true" />
+
+    <Button
+        android:text="Modificar"
+        android:onClick="modificarCable"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/modificar"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true" />
+
+    <Button
+        android:text="Eliminar"
+        android:onClick="eliminarCable"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/button"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/eliminar" />
 
 </RelativeLayout>

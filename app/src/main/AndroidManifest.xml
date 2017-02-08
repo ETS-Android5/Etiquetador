@@ -13,10 +13,12 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_GPS" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION" />
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/ic_launcher"
+        android:icon="@drawable/cnel"
         android:label="Etiquetador">
         <uses-library
             android:name="com.trimble.mcs"
@@ -33,15 +35,35 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ListadoPostes" />
-        <activity android:name=".Menu" />
-        <activity android:name=".AddPoste" />
+        <activity android:name=".ListadoPostes"
+            android:windowSoftInputMode="stateHidden"
+            android:label="Nueva Medición"
+            android:background="@color/white"/>
+        <activity android:name=".Menu"
+            android:label="Menú"
+            android:background="@color/white"/>
         <activity
             android:name=".InfoPoste"
-            android:windowSoftInputMode="stateHidden" />
+            android:label="Listado de Cables"
+            android:windowSoftInputMode="stateHidden"
+            android:background="@color/white"/>
         <activity android:name=".CaptureActivityPortrait" />
         <activity android:name=".ConfirmationActivity" />
-        <activity android:name=".RegistrarCable"></activity>
+        <activity android:name=".RegistrarCable"
+            android:label="Registrar Nuevo Cable"
+            android:background="@color/white"/>
+        <activity android:name=".PostesPendientes"
+            android:label="Postes Pendientes"
+            android:background="@color/white"/>
+        <activity android:name=".RegistrarPoste"
+            android:label="Registrar Nuevo Poste"
+            android:background="@color/white"/>
+        <activity android:name=".ListadoRepetidos"
+            android:label="Postes Registrados"
+            android:background="@color/white"/>
+        <activity android:name=".listaFinalizados"
+            android:label="Postes Finalizados"
+            android:background="@color/white"/>
     </application>
 
 </manifest>

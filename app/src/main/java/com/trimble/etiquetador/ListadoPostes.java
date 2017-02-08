@@ -5,10 +5,14 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
+import android.view.KeyEvent;
 import android.view.View;
+import android.view.WindowManager;
+import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.EditText;
@@ -56,42 +60,65 @@ public class ListadoPostes extends Activity {
                 intent.putExtra("NCables",tmpposte.getNcables());
                 postes.clear();
                 posteadapter.notifyDataSetChanged();
+                SQLiteDatabase db = myDbHelper.getReadableDatabase();
+                String mySql = "UPDATE postes SET estado = 1 WHERE _id = "+tmpposte.getId()+";";
+                db.execSQL(mySql);
+                db.close();
                 startActivity(intent);
             }
         });
         listviewPoste.setAdapter(posteadapter);
         inputManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+        (findViewById(R.id.posteid)).getBackground().mutate().setColorFilter(getResources().getColor(R.color.white), PorterDuff.Mode.SRC_ATOP);
+        ((TextView) findViewById(R.id.posteid)).setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                if (actionId == EditorInfo.IME_ACTION_DONE) {
+                    postes.clear();
+                    posteadapter.notifyDataSetChanged();
+                    String posteid = v.getText().toString();
+                    if(!posteid.equals("")){
+                        SQLiteDatabase db = myDbHelper.getReadableDatabase();
+                        String mySql = "SELECT * FROM postes WHERE posteid = '"+posteid.toUpperCase()+"' AND estado = 0;";
+                        Cursor c = db.rawQuery(mySql, null);
+                        try{
+                            c.moveToFirst();
+                            inputManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(),InputMethodManager.HIDE_NOT_ALWAYS);
+                            posteadapter.notifyDataSetChanged();
+                            do{
+                                postes.add(new Poste(c.getString(c.getColumnIndex("posteid")), c.getString(c.getColumnIndex("alimentador")),c.getInt(c.getColumnIndex("_id")),c.getInt(c.getColumnIndex("ncables"))));
+                                c.moveToNext();
+                            }while(!c.isAfterLast());
+
+                        }
+                        catch (android.database.CursorIndexOutOfBoundsException e){
+                            Toast toast = Toast.makeText(ListadoPostes.this,"Código del poste no encontrado",Toast.LENGTH_SHORT);
+                            toast.setGravity(Gravity.TOP| Gravity.LEFT, 50, 230);
+                            toast.show();
+                            postes.clear();
+                            posteadapter.notifyDataSetChanged();
+                        }
+                        c.close();
+                        db.close();}
+                }
+                return false;
+            }
+        });
+    }
+
+    @Override
+    public void onBackPressed()
+    {
+        super.onBackPressed();
+        startActivity(new Intent(this, Menu.class));
+        finish();
 
     }
 
-    public void checkLista(View view){
-        String posteid = ((TextView) findViewById(R.id.posteid)).getText().toString();
-        SQLiteDatabase db = myDbHelper.getReadableDatabase();
-        String mySql = "SELECT * FROM postes WHERE posteid = '"+posteid+"';";
-        Cursor c = db.rawQuery(mySql, null);
-        try{
-            c.moveToFirst();
-            inputManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(),InputMethodManager.HIDE_NOT_ALWAYS);
-            posteadapter.notifyDataSetChanged();
-            do{
-                postes.add(new Poste(c.getString(c.getColumnIndex("posteid")), c.getString(c.getColumnIndex("sector")),c.getInt(c.getColumnIndex("_id")),c.getInt(c.getColumnIndex("ncables"))));
-                c.moveToNext();
-            }while(!c.isAfterLast());
-
-        }
-        catch (android.database.CursorIndexOutOfBoundsException e){
-            Toast toast = Toast.makeText(this,"Código del poste no encontrado",Toast.LENGTH_LONG);
-            toast.setGravity(Gravity.TOP| Gravity.LEFT, 50, 110);
-            toast.show();
-            postes.clear();
-            posteadapter.notifyDataSetChanged();
-        }
-//        PostesAdapter adapter = new PostesAdapter(this, R.layout.activity_listado_postes, c, 1 );
-//        ListView lista = (ListView) findViewById(R.id.lista);
-//        lista.setAdapter(adapter);
-        c.close();
+    public void registrarNuevoPoste(View view){
+        Intent intent = new Intent(this, RegistrarPoste.class);
+        startActivity(intent);
     }
-
 
 
 }
