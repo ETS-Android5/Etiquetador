@@ -3,66 +3,30 @@
 
     <item
         is-multidex="false"
-        jar="C:\Users\razerjon24\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.8.0\c4ba5371a29ac9b2ad6129b1d39ea38750043eff\gson-2.8.0.jar"
-        jumboMode="true"
+        jar="/Users/jorge/.gradle/caches/modules-2/files-2.1/com.google.zxing/core/3.2.0/e019d15a13a9786f881141d2df6654b8510bce8b/core-3.2.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.2"
+        sha1="e019d15a13a9786f881141d2df6654b8510bce8b">
+        <dex dex="/Users/jorge/Documents/CVR/CNEL/Etiquetador/app/build/intermediates/pre-dexed/debug/core-3.2.0_1b9f0ad46e13d778ba8a7bfdf2b115085d1d5961.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/jorge/Documents/CVR/CNEL/Etiquetador/app/build/intermediates/exploded-aar/com.journeyapps/zxing-android-embedded/3.0.2/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.2"
+        sha1="744a4b394a9a7db8a4c4680836d8544802a9cd64">
+        <dex dex="/Users/jorge/Documents/CVR/CNEL/Etiquetador/app/build/intermediates/pre-dexed/debug/com.journeyapps-zxing-android-embedded-3.0.2_1191aefe7ba5a0c42cca587ca08bc648707ee85e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/jorge/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.8.0/c4ba5371a29ac9b2ad6129b1d39ea38750043eff/gson-2.8.0.jar"
+        jumboMode="false"
         optimize="true"
         revision="23.0.2"
         sha1="c4ba5371a29ac9b2ad6129b1d39ea38750043eff">
-        <dex dex="D:\Users\razerjon24\AndroidProjects\Etiquetador\app\build\intermediates\pre-dexed\debug\gson-2.8.0_897519f244e76d787eb6c0f6d2b379c49e1426d8.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\Users\razerjon24\AndroidProjects\Etiquetador\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.2"
-        sha1="c7bfebd0bd331e3b9adc82101368d213672b1130">
-        <dex dex="D:\Users\razerjon24\AndroidProjects\Etiquetador\app\build\intermediates\pre-dexed\debug\instant-run_b8c51e885eaea4cfb28f343ad0818d7aa06676d1.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\Users\razerjon24\AndroidProjects\Etiquetador\app\build\intermediates\exploded-aar\com.journeyapps\zxing-android-embedded\3.0.2\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.2"
-        sha1="744a4b394a9a7db8a4c4680836d8544802a9cd64">
-        <dex dex="D:\Users\razerjon24\AndroidProjects\Etiquetador\app\build\intermediates\pre-dexed\debug\com.journeyapps-zxing-android-embedded-3.0.2_ccfce29ccc321bb6ccd2decbf8b86820de3e1d90.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\Users\razerjon24\AndroidProjects\Etiquetador\app\build\intermediates\exploded-aar\com.journeyapps\zxing-android-embedded\3.0.2\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.2"
-        sha1="744a4b394a9a7db8a4c4680836d8544802a9cd64">
-        <dex dex="D:\Users\razerjon24\AndroidProjects\Etiquetador\app\build\intermediates\pre-dexed\debug\com.journeyapps-zxing-android-embedded-3.0.2_ccfce29ccc321bb6ccd2decbf8b86820de3e1d90.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\Users\razerjon24\AndroidProjects\Etiquetador\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.2"
-        sha1="d0a18a87eb781f66d2bf60d79549ab40df135b3a">
-        <dex dex="D:\Users\razerjon24\AndroidProjects\Etiquetador\app\build\intermediates\pre-dexed\debug\instant-run-bootstrap_34c0048bb39ef7c7b6ca845d4485d42f8f3889a1.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\razerjon24\.gradle\caches\modules-2\files-2.1\com.google.zxing\core\3.2.0\e019d15a13a9786f881141d2df6654b8510bce8b\core-3.2.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.2"
-        sha1="e019d15a13a9786f881141d2df6654b8510bce8b">
-        <dex dex="D:\Users\razerjon24\AndroidProjects\Etiquetador\app\build\intermediates\pre-dexed\debug\core-3.2.0_d88138c0a6a2b0f7d07909aabc39091c758d22c3.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\razerjon24\.gradle\caches\modules-2\files-2.1\com.google.zxing\core\3.2.0\e019d15a13a9786f881141d2df6654b8510bce8b\core-3.2.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.2"
-        sha1="e019d15a13a9786f881141d2df6654b8510bce8b">
-        <dex dex="D:\Users\razerjon24\AndroidProjects\Etiquetador\app\build\intermediates\pre-dexed\debug\core-3.2.0_d88138c0a6a2b0f7d07909aabc39091c758d22c3.jar" />
+        <dex dex="/Users/jorge/Documents/CVR/CNEL/Etiquetador/app/build/intermediates/pre-dexed/debug/gson-2.8.0_f6e72f9eb9df20f531cc68757c3e66bd33ad1050.jar" />
     </item>
 
 </items>

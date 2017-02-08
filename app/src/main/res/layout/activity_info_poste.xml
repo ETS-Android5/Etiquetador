@@ -74,11 +74,11 @@ tools:context="com.trimble.etiquetador.InfoPoste">
         android:layout_alignParentLeft="true" />
 
     <Button
-        android:text="Regresar"
+        android:text="Rfid"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
-        android:onClick="regresarListadoPostes"
-        android:id="@+id/button5"
+        android:onClick="openRfid"
+        android:id="@+id/btnRfid"
         android:layout_alignBaseline="@+id/boton"
         android:layout_alignBottom="@+id/boton"
         android:layout_alignParentLeft="true" />

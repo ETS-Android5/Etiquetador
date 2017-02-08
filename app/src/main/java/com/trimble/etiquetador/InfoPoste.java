@@ -102,6 +102,12 @@ public class InfoPoste extends Activity implements View.OnClickListener {
         db.close();
     }
 
+    public void openRfid(View view){
+        Intent rfidIntent = new Intent(this,RfidActivity.class);
+        startActivity(rfidIntent);
+    }
+
+
     @Override
     public void onClick(View v) {
         IntentIntegrator integrator = new IntentIntegrator(this);

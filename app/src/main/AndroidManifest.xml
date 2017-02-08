@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.trimble.etiquetador"
     android:versionCode="1"
-    android:versionName="1.0">
+    android:versionName="1.0" >
 
     <uses-sdk
         android:minSdkVersion="16"
@@ -15,11 +15,12 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_GPS" />
     <uses-permission android:name="android.permission.ACCESS_LOCATION" />
+    <uses-permission android:name="com.trimble.mcs.rfid.ACCESS_RFID"/>
 
     <application
         android:allowBackup="true"
         android:icon="@drawable/cnel"
-        android:label="Etiquetador">
+        android:label="Etiquetador" >
         <uses-library
             android:name="com.trimble.mcs"
             android:required="true" />
@@ -28,42 +29,51 @@
 
         <activity
             android:name=".Login"
-            android:label="Etiquetador">
+            android:label="Etiquetador" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ListadoPostes"
-            android:windowSoftInputMode="stateHidden"
+        <activity
+            android:name=".ListadoPostes"
+            android:background="@color/white"
             android:label="Nueva Medición"
-            android:background="@color/white"/>
-        <activity android:name=".Menu"
-            android:label="Menú"
-            android:background="@color/white"/>
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".Menu"
+            android:background="@color/white"
+            android:label="Menú" />
         <activity
             android:name=".InfoPoste"
+            android:background="@color/white"
             android:label="Listado de Cables"
-            android:windowSoftInputMode="stateHidden"
-            android:background="@color/white"/>
+            android:windowSoftInputMode="stateHidden" />
         <activity android:name=".CaptureActivityPortrait" />
         <activity android:name=".ConfirmationActivity" />
-        <activity android:name=".RegistrarCable"
-            android:label="Registrar Nuevo Cable"
-            android:background="@color/white"/>
-        <activity android:name=".PostesPendientes"
-            android:label="Postes Pendientes"
-            android:background="@color/white"/>
-        <activity android:name=".RegistrarPoste"
-            android:label="Registrar Nuevo Poste"
-            android:background="@color/white"/>
-        <activity android:name=".ListadoRepetidos"
-            android:label="Postes Registrados"
-            android:background="@color/white"/>
-        <activity android:name=".listaFinalizados"
-            android:label="Postes Finalizados"
-            android:background="@color/white"/>
+        <activity
+            android:name=".RegistrarCable"
+            android:background="@color/white"
+            android:label="Registrar Nuevo Cable" />
+        <activity
+            android:name=".PostesPendientes"
+            android:background="@color/white"
+            android:label="Postes Pendientes" />
+        <activity
+            android:name=".RegistrarPoste"
+            android:background="@color/white"
+            android:label="Registrar Nuevo Poste" />
+        <activity
+            android:name=".ListadoRepetidos"
+            android:background="@color/white"
+            android:label="Postes Registrados" />
+        <activity
+            android:name=".listaFinalizados"
+            android:background="@color/white"
+            android:label="Postes Finalizados" />
+        <activity android:name=".RfidActivity" >
+        </activity>
     </application>
 
 </manifest>
