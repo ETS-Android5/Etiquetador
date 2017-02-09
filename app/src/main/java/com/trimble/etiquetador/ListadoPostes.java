@@ -58,6 +58,7 @@ public class ListadoPostes extends Activity {
                 intent.putExtra("CodigoPoste",tmpposte.getCodigo());
                 intent.putExtra("Sector",tmpposte.getSector());
                 intent.putExtra("NCables",tmpposte.getNcables());
+                intent.putExtra("Ventana","listado");
                 postes.clear();
                 posteadapter.notifyDataSetChanged();
                 SQLiteDatabase db = myDbHelper.getReadableDatabase();

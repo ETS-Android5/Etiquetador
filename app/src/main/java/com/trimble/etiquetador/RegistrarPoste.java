@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.PorterDuff;
 import android.location.GpsStatus;
 import android.location.Location;
 import android.location.LocationListener;
@@ -228,6 +229,7 @@ public class RegistrarPoste extends Activity {
         locationListener = new MyLocationListener();
         locationManager.addGpsStatusListener(mGPSStatusListener);
         locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locationListener);
+        (findViewById(R.id.codigoposte)).getBackground().mutate().setColorFilter(getResources().getColor(R.color.white), PorterDuff.Mode.SRC_ATOP);
     }
     public void registrarPoste(View view){
         myDbHelper = new DataBaseHelper(this);
@@ -294,6 +296,7 @@ public class RegistrarPoste extends Activity {
                         intent.putExtra("CodigoPoste",codigoposte.toUpperCase());
                         intent.putExtra("Sector",alimentador);
                         intent.putExtra("NCables",0);
+                        intent.putExtra("Ventana","nuevo");
                         startActivity(intent);
                     } else if (GPSstatus.equals("GPS_SEARCHING")) {
                         Toast toast = Toast.makeText(this, "Buscando su posición GPS...", Toast.LENGTH_SHORT);

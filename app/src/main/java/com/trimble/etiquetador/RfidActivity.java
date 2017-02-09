@@ -5,10 +5,14 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.SeekBar;
 import android.widget.TextView;
@@ -30,7 +34,8 @@ public class RfidActivity extends Activity {
     private BroadcastReceiver mRecvr;
     private IntentFilter mFilter;
     private boolean mScanning = false;
-    private Button mBtn;
+    private ImageButton mBtn;
+    private TextView rfidState;
     private int power;
     private SeekBar seekBar;
     private int maxPower;
@@ -47,8 +52,9 @@ public class RfidActivity extends Activity {
         setContentView(R.layout.activity_rfid);
         maxPower=30;
         minPower=10;
-        power=minPower;
-        mBtn = (Button)findViewById(R.id.btn_scan);
+        power=maxPower;
+        rfidState = (TextView) findViewById(R.id.rfidState);
+        mBtn = (ImageButton)findViewById(R.id.btn_scan);
         txtdB = (TextView)findViewById(R.id.txtdB);
         configureSeekBar();
         configureListCodeBar();
@@ -92,6 +98,7 @@ public class RfidActivity extends Activity {
 
     private void configureSeekBar(){
         seekBar = (SeekBar) findViewById(R.id.powerBar);
+        seekBar.setProgress(maxPower);
         seekBar.setMax(maxPower-minPower);
         txtdB.setText("Potencia: " + power + " dB");
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
@@ -101,16 +108,6 @@ public class RfidActivity extends Activity {
             public void onProgressChanged(SeekBar seekBar, int progresValue, boolean fromUser) {
                 progress = progresValue;
                 //Toast.makeText(getApplicationContext(), "Changing seekbar's progress", Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
-                //Toast.makeText(getApplicationContext(), "Started tracking seekbar", Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-                //textView.setText("Covered: " + progress + "/" + seekBar.getMax());
                 power=progress+minPower;
 
                 try {
@@ -123,9 +120,16 @@ public class RfidActivity extends Activity {
                 } catch (RfidException e) {
                     Log.e(LOG_TAG, "Error setting RFID parameters.", e);
                 }
+            }
 
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+                //Toast.makeText(getApplicationContext(), "Started tracking seekbar", Toast.LENGTH_SHORT).show();
+            }
 
-                //Toast.makeText(getApplicationContext(), "Stopped, : "+power+" dB", Toast.LENGTH_SHORT).show();
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+                //textView.setText("Covered: " + progress + "/" + seekBar.getMax());
 
             }
         });
@@ -169,7 +173,8 @@ public class RfidActivity extends Activity {
             } catch (RfidException e) {
             }
             mScanning = false;
-            mBtn.setText("Escanear");
+            rfidState.setText("Escanear");
+            mBtn.setBackgroundResource(R.drawable.rfidsignal80);
         }
     }
 
@@ -179,19 +184,29 @@ public class RfidActivity extends Activity {
                 numberTags=0;
                 RfidManager.startScan();
                 mScanning = true;
-                mBtn.setText("Detener");
+                rfidState.setText("Detener");
+                mBtn.setBackgroundResource(R.drawable.rfidsignal100);
                 seekBar.setEnabled(false);
             }
             else {
                 RfidManager.stopScan();
                 mScanning = false;
                 //seekBar.setEnabled(true);
-                mBtn.setText("Escanear");
+                rfidState.setText("Escanear");
+                mBtn.setBackgroundResource(R.drawable.rfidsignal80);
 
             }
         } catch (RfidException e) {
             Log.e(LOG_TAG, "Error attempting to start/stop scan.", e);
         }
+    }
+
+    @Override
+    public void onBackPressed()
+    {
+        super.onBackPressed();
+        startActivity(new Intent(this, InfoPoste.class));
+        finish();
     }
 
     private void onScanComplete(Context context, Intent intent) {
@@ -215,7 +230,6 @@ public class RfidActivity extends Activity {
             }
         } else if (act.equals(RfidConstants.ACTION_RFID_STOP_SCAN_NOTIFICATION)) {
             seekBar.setEnabled(true);
-            Log.d(LOG_TAG, "Scanning stopped");
         }
     }
 }

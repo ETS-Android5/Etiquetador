@@ -8,11 +8,13 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.text.InputFilter;
 import android.text.Spanned;
 import android.util.Log;
 import android.view.Gravity;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.inputmethod.EditorInfo;
@@ -20,6 +22,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -32,36 +35,28 @@ import com.trimble.etiquetador.model.Cable;
 import java.util.ArrayList;
 
 public class InfoPoste extends Activity implements View.OnClickListener {
-    private Button boton;
-    protected DataBaseHelper myDbHelper;
+    private ImageButton boton;
+    DataBaseHelper myDbHelper;
     private static int posteid;
     private static String codigoposte;
     private static String sector;
     private static int ncables;
-    protected ArrayList<Cable> cables = new ArrayList<Cable>();
-    protected CableAdapter cableadapter;
+    private static String ventana;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_info_poste);
-        final ListView listviewCables = (ListView) findViewById(R.id.listacables);
-        boton = (Button) findViewById(R.id.boton);
+        boton = (ImageButton) findViewById(R.id.boton);
         boton.setOnClickListener(this);
         Intent intent = getIntent();
         if(intent.getIntExtra("IdPoste",0) != 0){
             posteid = intent.getIntExtra("IdPoste",0);
             codigoposte = intent.getStringExtra("CodigoPoste");
             sector = intent.getStringExtra("Sector");
+            ncables = intent.getIntExtra("NCables",0);
+            ventana = intent.getStringExtra("Ventana");
         }
-        ncables = intent.getIntExtra("NCables",0);
-        myDbHelper = new DataBaseHelper(this);
-        try {
-            myDbHelper.openDataBase();
-        }catch(SQLException sqle){
-            Log.w("Database",sqle.getMessage());
-        }
-        cableadapter = new CableAdapter(this,cables);
         TextView viewcodigoPoste = (TextView) findViewById(R.id.viewcodigo);
         TextView viewsector = (TextView) findViewById(R.id.viewsector);
         EditText viewncable = (EditText) findViewById(R.id.viewncable);
@@ -69,37 +64,41 @@ public class InfoPoste extends Activity implements View.OnClickListener {
         viewsector.setText(sector);
         viewncable.setText(Integer.toString(ncables));
         viewncable.setFilters(new InputFilter[]{ new InputFilterMinMax("0", "99")});
-        listviewCables.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        myDbHelper = new DataBaseHelper(this);
+        try {
+            myDbHelper.openDataBase();
+        }catch(SQLException sqle){
+            Log.w("Database",sqle.getMessage());
+        }
+        (findViewById(R.id.viewncable)).getBackground().mutate().setColorFilter(getResources().getColor(R.color.white), PorterDuff.Mode.SRC_ATOP);
+        ((TextView) findViewById(R.id.viewncable)).setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position,long id) {
-                Intent intent = new Intent(InfoPoste.this, RegistrarCable.class);
-                Cable tmpcable = cables.get(position);
-                intent.putExtra("modificar",1);
-                intent.putExtra("barCode",tmpcable.getTagid());
-                intent.putExtra("posteId",posteid);
-                intent.putExtra("sector",sector);
-                intent.putExtra("codigoPoste",codigoposte);
-                startActivity(intent);
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                if (actionId == EditorInfo.IME_ACTION_DONE) {
+                    String ncable = v.getText().toString();
+                    if(!ncable.equals("")){
+                        int ncabledata = Integer.parseInt(ncable);
+                        if(ncabledata != ncables){
+                            SQLiteDatabase db = myDbHelper.getReadableDatabase();
+                            String mySql = "UPDATE postes SET ncables = "+ncabledata+" WHERE _id = "+posteid+";";
+                            db.execSQL(mySql);
+                            db.close();
+                            Toast toast = Toast.makeText(InfoPoste.this,"Número de cables modificado",Toast.LENGTH_SHORT);
+                            toast.setGravity(Gravity.TOP| Gravity.LEFT, 50, 130);
+                            toast.show();
+                            v.setCursorVisible(false);
+                            ncables = ncabledata;
+                        }
+                        else{
+                            Toast toast = Toast.makeText(InfoPoste.this,"Modifique el número de cables primero",Toast.LENGTH_SHORT);
+                            toast.setGravity(Gravity.TOP| Gravity.LEFT, 20, 130);
+                            toast.show();
+                        }
+                    }
+                }
+                return false;
             }
         });
-        listviewCables.setAdapter(cableadapter);
-        SQLiteDatabase db = myDbHelper.getReadableDatabase();
-        String mySql = "SELECT * FROM cables WHERE posteid = '"+posteid+"';";
-        Cursor c = db.rawQuery(mySql, null);
-        try{
-            c.moveToFirst();
-            cableadapter.notifyDataSetChanged();
-            do{
-                cables.add(new Cable(c.getString(c.getColumnIndex("_id")), c.getString(c.getColumnIndex("tipo")),c.getString(c.getColumnIndex("uso")),c.getInt(c.getColumnIndex("escable"))!= 0,c.getString(c.getColumnIndex("operadora")),c.getString(c.getColumnIndex("dimension"))));
-                c.moveToNext();
-            }while(!c.isAfterLast());
-        }
-        catch (android.database.CursorIndexOutOfBoundsException e){
-            cables.clear();
-            cableadapter.notifyDataSetChanged();
-        }
-        c.close();
-        db.close();
     }
 
     public void openRfid(View view){
@@ -148,25 +147,10 @@ public class InfoPoste extends Activity implements View.OnClickListener {
         InfoPoste.this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
     }
 
-    public void modifyNCable(View view){
-        EditText cabledata = (EditText) findViewById(R.id.viewncable);
-        int ncabledata = Integer.parseInt(cabledata.getText().toString());
-        Log.w("ncable",Integer.toString(ncabledata));
-        if(ncabledata != ncables){
-            SQLiteDatabase db = myDbHelper.getReadableDatabase();
-            String mySql = "UPDATE postes SET ncables = "+ncabledata+" WHERE _id = "+posteid+";";
-            db.execSQL(mySql);
-            db.close();
-            Toast toast = Toast.makeText(this,"Número de cables modificado",Toast.LENGTH_LONG);
-            toast.setGravity(Gravity.TOP| Gravity.LEFT, 50, 130);
-            toast.show();
-            cabledata.setCursorVisible(false);
-        }
-        else{
-            Toast toast = Toast.makeText(this,"Modifique el número de cables primero",Toast.LENGTH_LONG);
-            toast.setGravity(Gravity.TOP| Gravity.LEFT, 20, 130);
-            toast.show();
-        }
+    public void cablesFeatures(View view){
+        Intent intent = new Intent(this,ListadoCables.class);
+        intent.putExtra("posteid",posteid);
+        startActivity(intent);
     }
 
     public void returnListaPoste(View view){
@@ -186,9 +170,21 @@ public class InfoPoste extends Activity implements View.OnClickListener {
                     .setNegativeButton(android.R.string.no, null).show();
     }
 
-    public void regresarListadoPostes(View view){
-        Intent intent = new Intent(this, ListadoPostes.class);
-        startActivity(intent);
+    @Override
+    public void onBackPressed()
+    {
+        super.onBackPressed();
+        if(ventana.equals("listado"))
+            startActivity(new Intent(this, ListadoPostes.class));
+        else if(ventana.equals("pendientes"))
+            startActivity(new Intent(this, PostesPendientes.class));
+        else if(ventana.equals("finalizados"))
+            startActivity(new Intent(this, listaFinalizados.class));
+        else if(ventana.equals("nuevo"))
+            startActivity(new Intent(this, RegistrarPoste.class));
+        else if(ventana.equals("repetidos"))
+            startActivity(new Intent(this, ListadoRepetidos.class));
+        finish();
     }
 
     public class InputFilterMinMax implements InputFilter {

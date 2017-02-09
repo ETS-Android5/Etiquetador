@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -6,43 +7,65 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".RfidActivity" >
+    android:background="@color/blue"
+    tools:context="com.trimble.etiquetador.RfidActivity" >
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <SeekBar
-            android:id="@+id/powerBar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
         <TextView
             android:id="@+id/txtdB"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:enabled="false"/>
-
+            android:enabled="false"
+            android:gravity="center_horizontal"
+            android:typeface="monospace"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            />
+        <SeekBar
+            
+            android:id="@+id/powerBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
         <TextView
+            android:layout_marginTop="10dp"
+            android:typeface="monospace"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:gravity="center_horizontal"
             android:id="@+id/etData"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingTop="50dp"/>
+            />
 
-        <Button
+        <ListView
+            android:layout_marginTop="10dp"
+            android:id="@+id/listRfid"
+            android:layout_width="match_parent"
+            android:layout_height="250dp">
+        </ListView>
+        <ImageButton
             android:id="@+id/btn_scan"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:background="@drawable/rfidsignal80"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:layout_alignRight="@+id/etData"
             android:layout_below="@+id/etData"
             android:onClick="startScan"
-            android:text="Escanear" />
-        <ListView
-            android:id="@+id/listRfid"
+            android:layout_gravity="center_horizontal"
+            />
+        <TextView
+            android:text="Escanear"
+            android:typeface="monospace"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:gravity="center_horizontal"
+            android:id="@+id/rfidState"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-        </ListView>
-
+            android:layout_height="wrap_content"
+            />
     </LinearLayout>
 
 

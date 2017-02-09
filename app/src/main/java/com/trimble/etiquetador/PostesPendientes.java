@@ -21,7 +21,7 @@ import java.util.ArrayList;
 public class PostesPendientes extends Activity {
     protected DataBaseHelper myDbHelper;
     protected static ArrayList<Poste> postes = new ArrayList<Poste>();
-    protected PosteAdapter posteadapter;
+    protected static PosteAdapter posteadapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +44,7 @@ public class PostesPendientes extends Activity {
                 intent.putExtra("CodigoPoste",tmpposte.getCodigo());
                 intent.putExtra("Sector",tmpposte.getSector());
                 intent.putExtra("NCables",tmpposte.getNcables());
+                intent.putExtra("Ventana","pendientes");
                 postes.clear();
                 posteadapter.notifyDataSetChanged();
                 startActivity(intent);

@@ -43,6 +43,7 @@ public class listaFinalizados extends Activity {
                 intent.putExtra("CodigoPoste",tmpposte.getCodigo());
                 intent.putExtra("Sector",tmpposte.getSector());
                 intent.putExtra("NCables",tmpposte.getNcables());
+                intent.putExtra("Ventana","finalizados");
                 postes.clear();
                 posteadapter.notifyDataSetChanged();
                 startActivity(intent);

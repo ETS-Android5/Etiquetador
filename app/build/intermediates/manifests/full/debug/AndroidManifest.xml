@@ -58,42 +58,38 @@
         </activity>
         <activity
             android:name="com.trimble.etiquetador.ListadoPostes"
-            android:background="@color/white"
             android:label="Nueva Medición"
             android:windowSoftInputMode="stateHidden" />
         <activity
             android:name="com.trimble.etiquetador.Menu"
-            android:background="@color/white"
             android:label="Menú" />
         <activity
             android:name="com.trimble.etiquetador.InfoPoste"
-            android:background="@color/white"
-            android:label="Listado de Cables"
+            android:label="Mediciones Poste"
             android:windowSoftInputMode="stateHidden" />
         <activity android:name="com.trimble.etiquetador.CaptureActivityPortrait" />
         <activity android:name="com.trimble.etiquetador.ConfirmationActivity" />
         <activity
             android:name="com.trimble.etiquetador.RegistrarCable"
-            android:background="@color/white"
             android:label="Registrar Nuevo Cable" />
         <activity
             android:name="com.trimble.etiquetador.PostesPendientes"
-            android:background="@color/white"
             android:label="Postes Pendientes" />
         <activity
             android:name="com.trimble.etiquetador.RegistrarPoste"
-            android:background="@color/white"
             android:label="Registrar Nuevo Poste" />
         <activity
             android:name="com.trimble.etiquetador.ListadoRepetidos"
-            android:background="@color/white"
             android:label="Postes Registrados" />
         <activity
             android:name="com.trimble.etiquetador.listaFinalizados"
-            android:background="@color/white"
             android:label="Postes Finalizados" />
-        <activity android:name="com.trimble.etiquetador.RfidActivity" >
-        </activity>
+        <activity
+            android:name="com.trimble.etiquetador.RfidActivity"
+            android:label="Verificar Tags" />
+        <activity
+            android:name="com.trimble.etiquetador.ListadoCables"
+            android:label="Listado de Cables" />
         <activity
             android:name="com.journeyapps.barcodescanner.CaptureActivity"
             android:clearTaskOnLaunch="true"

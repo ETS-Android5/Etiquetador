@@ -60,7 +60,7 @@ public class CodeBarAdapter extends ArrayAdapter<CodeBar> {
             //int id = context.getResources().getIdentifier("drawable/checkmark.png",null,null);
             holder.imgEstado.setImageResource(R.drawable.checkmark);
         }else{
-            holder.imgEstado.setImageResource(R.drawable.no);
+            holder.imgEstado.setImageResource(R.drawable.question_mark96);
         }
         return convertView;
     }

@@ -1,16 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal" android:layout_width="match_parent"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <ImageButton
+        android:id="@+id/imgTrash"
+        android:background="@drawable/delete80"
+        android:layout_width="100dp"
+        android:layout_height="45dp"
+        android:layout_weight="1"/>
     <TextView
+        android:gravity="center_vertical|center_horizontal"
         android:id="@+id/txtRfidCode"
-        android:layout_width="wrap_content"
+        android:typeface="monospace"
+        android:textSize="20sp"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignParentLeft="true"/>
+        android:layout_weight="1"
+        />
     <ImageView
         android:id="@+id/imgEstado"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignParentRight="true"/>
+        android:layout_weight="4"/>
 
 </LinearLayout>

@@ -48,6 +48,7 @@ public class ListadoRepetidos extends Activity {
                 intent.putExtra("CodigoPoste",tmpposte.getCodigo());
                 intent.putExtra("Sector",tmpposte.getSector());
                 intent.putExtra("NCables",tmpposte.getNcables());
+                intent.putExtra("Ventana","repetidos");
                 postes.clear();
                 posteadapter.notifyDataSetChanged();
                 SQLiteDatabase db = myDbHelper.getReadableDatabase();

@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.trimble.etiquetador"
     android:versionCode="1"
-    android:versionName="1.0" >
+    android:versionName="1.0">
 
     <uses-sdk
         android:minSdkVersion="16"
@@ -15,12 +15,12 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_GPS" />
     <uses-permission android:name="android.permission.ACCESS_LOCATION" />
-    <uses-permission android:name="com.trimble.mcs.rfid.ACCESS_RFID"/>
+    <uses-permission android:name="com.trimble.mcs.rfid.ACCESS_RFID" />
 
     <application
         android:allowBackup="true"
         android:icon="@drawable/cnel"
-        android:label="Etiquetador" >
+        android:label="Etiquetador">
         <uses-library
             android:name="com.trimble.mcs"
             android:required="true" />
@@ -29,7 +29,7 @@
 
         <activity
             android:name=".Login"
-            android:label="Etiquetador" >
+            android:label="Etiquetador">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -38,42 +38,38 @@
         </activity>
         <activity
             android:name=".ListadoPostes"
-            android:background="@color/white"
             android:label="Nueva Medición"
             android:windowSoftInputMode="stateHidden" />
         <activity
             android:name=".Menu"
-            android:background="@color/white"
             android:label="Menú" />
         <activity
             android:name=".InfoPoste"
-            android:background="@color/white"
-            android:label="Listado de Cables"
+            android:label="Mediciones Poste"
             android:windowSoftInputMode="stateHidden" />
         <activity android:name=".CaptureActivityPortrait" />
         <activity android:name=".ConfirmationActivity" />
         <activity
             android:name=".RegistrarCable"
-            android:background="@color/white"
             android:label="Registrar Nuevo Cable" />
         <activity
             android:name=".PostesPendientes"
-            android:background="@color/white"
             android:label="Postes Pendientes" />
         <activity
             android:name=".RegistrarPoste"
-            android:background="@color/white"
             android:label="Registrar Nuevo Poste" />
         <activity
             android:name=".ListadoRepetidos"
-            android:background="@color/white"
             android:label="Postes Registrados" />
         <activity
             android:name=".listaFinalizados"
-            android:background="@color/white"
             android:label="Postes Finalizados" />
-        <activity android:name=".RfidActivity" >
-        </activity>
+        <activity
+            android:name=".RfidActivity"
+            android:label="Verificar Tags"/>
+        <activity
+            android:name=".ListadoCables"
+            android:label="Listado de Cables"/>
     </application>
 
 </manifest>

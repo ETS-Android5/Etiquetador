@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-zh-rHK\\values-zh-rHK.xml",
+        "outputFile": "D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-zh-rHK\\values-zh-rHK.xml",
         "map": [
             {
                 "to": {
@@ -11,7 +11,7 @@
                     "endOffset": 99
                 },
                 "from": {
-                    "file": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\build\\intermediates\\exploded-aar\\com.journeyapps\\zxing-android-embedded\\3.0.2\\res\\values-zh-rHK\\values.xml",
+                    "file": "D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\build\\intermediates\\exploded-aar\\com.journeyapps\\zxing-android-embedded\\3.0.2\\res\\values-zh-rHK\\values.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -30,7 +30,7 @@
                     "endOffset": 146
                 },
                 "from": {
-                    "file": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\build\\intermediates\\exploded-aar\\com.journeyapps\\zxing-android-embedded\\3.0.2\\res\\values-zh-rHK\\values.xml",
+                    "file": "D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\build\\intermediates\\exploded-aar\\com.journeyapps\\zxing-android-embedded\\3.0.2\\res\\values-zh-rHK\\values.xml",
                     "position": {
                         "startLine": 5,
                         "startColumn": 4,
@@ -49,7 +49,7 @@
                     "endOffset": 239
                 },
                 "from": {
-                    "file": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\build\\intermediates\\exploded-aar\\com.journeyapps\\zxing-android-embedded\\3.0.2\\res\\values-zh-rHK\\values.xml",
+                    "file": "D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\build\\intermediates\\exploded-aar\\com.journeyapps\\zxing-android-embedded\\3.0.2\\res\\values-zh-rHK\\values.xml",
                     "position": {
                         "startLine": 6,
                         "startColumn": 4,
@@ -68,88 +68,7 @@
                     "endOffset": 309
                 },
                 "from": {
-                    "file": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\build\\intermediates\\exploded-aar\\com.journeyapps\\zxing-android-embedded\\3.0.2\\res\\values-zh-rHK\\values.xml",
-                    "position": {
-                        "startLine": 7,
-                        "startColumn": 4,
-                        "startOffset": 388,
-                        "endColumn": 69,
-                        "endOffset": 453
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "outputFile": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-zh-rHK/values-zh-rHK.xml",
-        "map": [
-            {
-                "to": {
-                    "startLine": 2,
-                    "startColumn": 4,
-                    "startOffset": 55,
-                    "endColumn": 48,
-                    "endOffset": 99
-                },
-                "from": {
-                    "file": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/app/build/intermediates/exploded-aar/com.journeyapps/zxing-android-embedded/3.0.2/res/values-zh-rHK/values.xml",
-                    "position": {
-                        "startLine": 4,
-                        "startColumn": 4,
-                        "startOffset": 199,
-                        "endColumn": 48,
-                        "endOffset": 243
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 3,
-                    "startColumn": 4,
-                    "startOffset": 104,
-                    "endColumn": 46,
-                    "endOffset": 146
-                },
-                "from": {
-                    "file": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/app/build/intermediates/exploded-aar/com.journeyapps/zxing-android-embedded/3.0.2/res/values-zh-rHK/values.xml",
-                    "position": {
-                        "startLine": 5,
-                        "startColumn": 4,
-                        "startOffset": 248,
-                        "endColumn": 46,
-                        "endOffset": 290
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 4,
-                    "startColumn": 4,
-                    "startOffset": 151,
-                    "endColumn": 92,
-                    "endOffset": 239
-                },
-                "from": {
-                    "file": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/app/build/intermediates/exploded-aar/com.journeyapps/zxing-android-embedded/3.0.2/res/values-zh-rHK/values.xml",
-                    "position": {
-                        "startLine": 6,
-                        "startColumn": 4,
-                        "startOffset": 295,
-                        "endColumn": 92,
-                        "endOffset": 383
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 5,
-                    "startColumn": 4,
-                    "startOffset": 244,
-                    "endColumn": 69,
-                    "endOffset": 309
-                },
-                "from": {
-                    "file": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/app/build/intermediates/exploded-aar/com.journeyapps/zxing-android-embedded/3.0.2/res/values-zh-rHK/values.xml",
+                    "file": "D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\build\\intermediates\\exploded-aar\\com.journeyapps\\zxing-android-embedded\\3.0.2\\res\\values-zh-rHK\\values.xml",
                     "position": {
                         "startLine": 7,
                         "startColumn": 4,
