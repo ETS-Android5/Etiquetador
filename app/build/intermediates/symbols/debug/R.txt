@@ -37,6 +37,7 @@ int drawable rfidsignal80 0x7f020010
 int drawable round_button 0x7f020011
 int drawable sewing_tape_measure96 0x7f020012
 int drawable uploadtoftp100 0x7f020013
+int id BtnDeleteCable 0x7f090056
 int id activity_lista_finalizados 0x7f090018
 int id activity_listado_cables 0x7f09001a
 int id activity_listado_postes 0x7f09001c
@@ -66,7 +67,6 @@ int id eliminar 0x7f090044
 int id etData 0x7f09004d
 int id fin 0x7f09002b
 int id imgEstado 0x7f090058
-int id imgTrash 0x7f090056
 int id listRfid 0x7f09004e
 int id lista 0x7f090023
 int id listadocables 0x7f09001b

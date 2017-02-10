@@ -1,6 +1,10 @@
 [
     {
-        "merged": "D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\build\\intermediates\\res\\merged\\debug\\raw\\zxing_beep.ogg",
-        "source": "D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\build\\intermediates\\exploded-aar\\com.journeyapps\\zxing-android-embedded\\3.0.2\\res\\raw\\zxing_beep.ogg"
+        "merged": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/app/build/intermediates/res/merged/debug/raw/zxing_beep.ogg",
+        "source": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/app/build/intermediates/exploded-aar/com.journeyapps/zxing-android-embedded/3.0.2/res/raw/zxing_beep.ogg"
+    },
+    {
+        "merged": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\build\\intermediates\\res\\merged\\debug\\raw\\zxing_beep.ogg",
+        "source": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\build\\intermediates\\exploded-aar\\com.journeyapps\\zxing-android-embedded\\3.0.2\\res\\raw\\zxing_beep.ogg"
     }
 ]

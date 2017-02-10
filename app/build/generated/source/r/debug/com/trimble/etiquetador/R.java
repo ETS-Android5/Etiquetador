@@ -91,6 +91,7 @@ containing a value of this type.
         public static final int uploadtoftp100=0x7f020013;
     }
     public static final class id {
+        public static final int BtnDeleteCable=0x7f090056;
         public static final int activity_lista_finalizados=0x7f090018;
         public static final int activity_listado_cables=0x7f09001a;
         public static final int activity_listado_postes=0x7f09001c;
@@ -120,7 +121,6 @@ containing a value of this type.
         public static final int etData=0x7f09004d;
         public static final int fin=0x7f09002b;
         public static final int imgEstado=0x7f090058;
-        public static final int imgTrash=0x7f090056;
         public static final int listRfid=0x7f09004e;
         public static final int lista=0x7f090023;
         public static final int listadocables=0x7f09001b;

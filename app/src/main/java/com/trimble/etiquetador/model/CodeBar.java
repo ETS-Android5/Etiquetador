@@ -5,25 +5,31 @@ package com.trimble.etiquetador.model;
  */
 public class CodeBar {
     private String code;
-    private String estado;
+    private int estado;
+    private String rfid;
 
-    public CodeBar(String code, String estado){
+    public CodeBar(String code, int estado, String rfid){
         this.code=code;
         this.estado=estado;
+        this.rfid=rfid;
     }
 
     public void setCode(String code){
         this.code=code;
     }
 
-    public void setEstado(String estado){
+    public void setEstado(int estado){
         this.estado=estado;
     }
+
+    public void setRfid(String rfid){ this.rfid=rfid;}
 
     public String getCode(){
         return code;
     }
 
-    public String getEstado(){ return estado;}
+    public int getEstado(){ return estado;}
+
+    public String getRfid(){ return rfid;}
 
 }

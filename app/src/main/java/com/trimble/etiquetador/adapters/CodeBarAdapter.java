@@ -5,9 +5,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.trimble.etiquetador.model.Cable;
 import com.trimble.etiquetador.model.CodeBar;
 import com.trimble.etiquetador.R;
 import com.trimble.etiquetador.Observer;
@@ -32,6 +34,7 @@ public class CodeBarAdapter extends ArrayAdapter<CodeBar> {
     static class ViewHolder{
         public TextView txtCode;
         public ImageView imgEstado;
+        public ImageButton btnEliminar;
     }
 
     public ArrayList<CodeBar> getRfids() {
@@ -50,13 +53,26 @@ public class CodeBarAdapter extends ArrayAdapter<CodeBar> {
             ViewHolder viewHolder = new ViewHolder();
             viewHolder.txtCode = (TextView)convertView.findViewById(R.id.txtRfidCode);
             viewHolder.imgEstado=(ImageView)convertView.findViewById(R.id.imgEstado);
+            viewHolder.btnEliminar=(ImageButton)convertView.findViewById(R.id.BtnDeleteCable);
             convertView.setTag(viewHolder);
         }
         ViewHolder holder = (ViewHolder)convertView.getTag();
         final CodeBar currentRfid = this.rfids.get(position);
         holder.txtCode.setText(currentRfid.getCode());
-        //holder.imgEstado.setText(currentRfid.getEstado());
-        if(currentRfid.getEstado().equals("Si Detectado")){
+        ImageButton delete =(ImageButton)convertView.findViewById(R.id.BtnDeleteCable);
+        delete.setFocusable(false);
+        delete.setClickable(false);
+        observer=this.observer;
+        delete.setOnClickListener(new View.OnClickListener() {
+            private CodeBar dataCodeBar = currentRfid;
+            private Observer dataObserver = observer;
+
+            @Override
+            public void onClick(View v) {
+                dataObserver.update(dataCodeBar.getCode());
+            }
+        });
+        if(currentRfid.getEstado()==1){
             //int id = context.getResources().getIdentifier("drawable/checkmark.png",null,null);
             holder.imgEstado.setImageResource(R.drawable.checkmark);
         }else{

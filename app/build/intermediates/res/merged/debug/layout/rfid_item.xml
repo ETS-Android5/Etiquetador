@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <ImageButton
-        android:id="@+id/imgTrash"
+        android:id="@+id/BtnDeleteCable"
         android:background="@drawable/delete80"
         android:layout_width="100dp"
         android:layout_height="45dp"

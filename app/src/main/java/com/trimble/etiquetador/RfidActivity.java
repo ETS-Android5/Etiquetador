@@ -5,6 +5,9 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.database.Cursor;
+import android.database.SQLException;
+import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
@@ -20,15 +23,18 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 import com.trimble.etiquetador.adapters.CodeBarAdapter;
+import com.trimble.etiquetador.model.Cable;
 import com.trimble.etiquetador.model.CodeBar;
 import com.trimble.mcs.rfid.v1.RfidConstants;
 import com.trimble.mcs.rfid.v1.RfidException;
 import com.trimble.mcs.rfid.v1.RfidManager;
 import com.trimble.mcs.rfid.v1.RfidParameters;
 import com.trimble.mcs.rfid.v1.RfidStatusCallback;
+import java.util.Map;
+import java.util.HashMap;
+import android.widget.Toast;
 
-
-public class RfidActivity extends Activity {
+public class RfidActivity extends Activity implements Observer {
     private final static String LOG_TAG = "RfidDemo";
 
     private BroadcastReceiver mRecvr;
@@ -45,11 +51,27 @@ public class RfidActivity extends Activity {
     private int numberTags;
     private ListView elements;
     private CodeBarAdapter adapter;
+    private  Map<String, String> codeBarRfid = new HashMap<String, String>();
+    private DataBaseHelper myDbHelper;
+    private int posteId;
+
+    @Override
+    public void update(Object objeto){
+        //eliminar el cable
+        Toast.makeText(getApplicationContext(), "Se Quiere eliminar: "+objeto, Toast.LENGTH_SHORT).show();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rfid);
+        posteId = getIntent().getIntExtra("posteId",0);
+        myDbHelper = new DataBaseHelper(this);
+        try {
+            myDbHelper.openDataBase();
+        }catch(SQLException sqle){
+            Log.w("Database",sqle.getMessage());
+        }
         maxPower=30;
         minPower=10;
         power=maxPower;
@@ -59,7 +81,7 @@ public class RfidActivity extends Activity {
         configureSeekBar();
         configureListCodeBar();
         numberTags=0;
-        ((TextView)findViewById(R.id.etData)).setText("Tags Detectados: " + numberTags);
+        ((TextView)findViewById(R.id.etData)).setText("Tags Detectados: " + numberTags +"/"+codeBars.size());
 
         mRecvr = new BroadcastReceiver() {
             public void onReceive(Context context, Intent intent) {
@@ -89,17 +111,39 @@ public class RfidActivity extends Activity {
 
     private void configureListCodeBar(){
         elements = (ListView) findViewById(R.id.listRfid);
-        adapter = new CodeBarAdapter(this,codeBars,null);
+        adapter = new CodeBarAdapter(this,codeBars,this);
         elements.setAdapter(adapter);
-        codeBars.add(new CodeBar("12345678", "No Detectado"));
-        codeBars.add(new CodeBar("00002716","No Detectado"));
-        codeBars.add(new CodeBar("12345673","No Detectado"));
+        codeBarRfid.put("57864259","E280116060000207BF501B86" );
+        codeBarRfid.put("87923568", "E280116060000207BF51AB76");
+        codeBarRfid.put("95050003", "E280116060000207BF51CD46");
+        codeBarRfid.put("90311017","E280116060000207BF51CDB6");
+        //codeBars.add(new CodeBar("57864259", "No Detectado", "E280116060000207BF501B86"));
+        SQLiteDatabase db = myDbHelper.getReadableDatabase();
+        String mySql = "SELECT * FROM cables WHERE posteid="+posteId+";";
+        Cursor c = db.rawQuery(mySql, null);
+        codeBars.clear();
+        try{
+            c.moveToFirst();
+            do{
+                String codeNumber=c.getString(c.getColumnIndex("_id"));
+                String rfid=codeBarRfid.get(codeNumber);
+                codeBars.add(new CodeBar(c.getString(c.getColumnIndex("_id")),0,rfid));
+                c.moveToNext();
+            }while(!c.isAfterLast());
+        }
+        catch (android.database.CursorIndexOutOfBoundsException e){
+            codeBars.clear();
+            adapter.notifyDataSetChanged();
+        }
+        c.close();
+        db.close();
+
     }
 
     private void configureSeekBar(){
         seekBar = (SeekBar) findViewById(R.id.powerBar);
         seekBar.setProgress(maxPower);
-        seekBar.setMax(maxPower-minPower);
+        seekBar.setMax(maxPower - minPower);
         txtdB.setText("Potencia: " + power + " dB");
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             int progress = 0;
@@ -108,7 +152,7 @@ public class RfidActivity extends Activity {
             public void onProgressChanged(SeekBar seekBar, int progresValue, boolean fromUser) {
                 progress = progresValue;
                 //Toast.makeText(getApplicationContext(), "Changing seekbar's progress", Toast.LENGTH_SHORT).show();
-                power=progress+minPower;
+                power = progress + minPower;
 
                 try {
                     // Set output mode to 'Intent' mode so that broadcast
@@ -116,7 +160,7 @@ public class RfidActivity extends Activity {
                     RfidParameters parms = RfidManager.getParameters();
                     parms.setReadPower(power);
                     RfidManager.setParameters(parms);
-                    txtdB.setText("Potencia: "+power+" dB");
+                    txtdB.setText("Potencia: " + power + " dB");
                 } catch (RfidException e) {
                     Log.e(LOG_TAG, "Error setting RFID parameters.", e);
                 }
@@ -194,7 +238,10 @@ public class RfidActivity extends Activity {
                 //seekBar.setEnabled(true);
                 rfidState.setText("Escanear");
                 mBtn.setBackgroundResource(R.drawable.rfidsignal80);
-
+                for(int i=0;i<codeBars.size();i++) {
+                    codeBars.get(i).setEstado(0);
+                }
+                adapter.notifyDataSetChanged();
             }
         } catch (RfidException e) {
             Log.e(LOG_TAG, "Error attempting to start/stop scan.", e);
@@ -211,20 +258,17 @@ public class RfidActivity extends Activity {
 
     private void onScanComplete(Context context, Intent intent) {
         String act = intent.getAction();
-
         if (act.equals(RfidConstants.ACTION_RFID_TAG_SCANNED)) {
             String tagId = intent.getStringExtra(RfidConstants.RFID_FIELD_ID);
-            Log.d(LOG_TAG, "Tag: "+tagId);
-            numberTags++;
-            ((TextView)findViewById(R.id.etData)).setText("Tags Detectados: " + numberTags);
-            //codeBars.add(new CodeBar(tagId));
+            Log.d(LOG_TAG, "Tag: " + tagId);
+            Log.d(LOG_TAG, tagId);
             for(int i=0;i<codeBars.size();i++){
-                String currentCode=codeBars.get(i).getCode();
-                if(currentCode.equals(tagId.substring(16))){
-                    //codeBars.add(new CodeBar("jajaja","jajajaj"));
-                    codeBars.get(i).setEstado("Si Detectado");
-                    Log.d(LOG_TAG, "Si");
+                String currentCode=codeBars.get(i).getRfid();
+                if(currentCode.equals(tagId)){
+                    numberTags++;
+                    codeBars.get(i).setEstado(1);
                     adapter.notifyDataSetChanged();
+                    ((TextView)findViewById(R.id.etData)).setText("Tags Detectados: " + numberTags + "/" + codeBars.size());
                     break;
                 }
             }

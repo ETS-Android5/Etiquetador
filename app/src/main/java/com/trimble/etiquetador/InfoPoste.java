@@ -103,6 +103,7 @@ public class InfoPoste extends Activity implements View.OnClickListener {
 
     public void openRfid(View view){
         Intent rfidIntent = new Intent(this,RfidActivity.class);
+        rfidIntent.putExtra("posteId",posteid);
         startActivity(rfidIntent);
     }
 
@@ -119,6 +120,32 @@ public class InfoPoste extends Activity implements View.OnClickListener {
         integrator.initiateScan();
     }
 
+    public void registrarCable(String barCode){
+        myDbHelper = new DataBaseHelper(this);
+        try {
+            myDbHelper.openDataBase();
+        }catch(SQLException sqle){
+            Log.w("Database",sqle.getMessage());
+        }
+        SQLiteDatabase db = myDbHelper.getReadableDatabase();
+        String mySql = "SELECT _id FROM cables WHERE _id = '"+barCode+"';";
+        Cursor c = db.rawQuery(mySql, null);
+        if(c.getCount() == 1){
+            Toast toast = Toast.makeText(this,"Error: Ya existe un Cable con ese ID",Toast.LENGTH_LONG);
+            toast.setGravity(Gravity.TOP| Gravity.LEFT, 80, 310);
+            toast.show();
+        }
+        else{
+            mySql = "INSERT INTO cables (_id,posteid,tipo,dimension,escable,operadora,usuario) VALUES ('"+barCode+"','"+posteid+"','','',"+0+",'','cnel');";
+            db.execSQL(mySql);
+            Toast toast = Toast.makeText(this,"Cable Registrado: "+barCode,Toast.LENGTH_LONG);
+            toast.setGravity(Gravity.TOP| Gravity.LEFT, 80, 310);
+            toast.show();
+        }
+        c.close();
+        db.close();
+    }
+
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         IntentResult result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
         if(result != null) {
@@ -126,14 +153,7 @@ public class InfoPoste extends Activity implements View.OnClickListener {
                 Toast.makeText(this, "Cancelado", Toast.LENGTH_SHORT).show();
             } else {
                 String code=result.getContents();
-                //txtCode.setText(code);
-                //Toast.makeText(this, "Scanned: " + code, Toast.LENGTH_LONG).show();
-                Intent intent = new Intent(this, ConfirmationActivity.class);
-                intent.putExtra("barCode",code);
-                intent.putExtra("posteId",posteid);
-                intent.putExtra("sector",sector);
-                intent.putExtra("codigoPoste",codigoposte);
-                startActivity(intent);
+                registrarCable(code);
             }
         } else {
             // This is important, otherwise the result will not be passed to the fragment
