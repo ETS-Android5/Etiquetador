@@ -76,6 +76,7 @@
 
     <ImageButton
         android:text="Transferir"
+        android:onClick="transferirDatos"
         android:background="@drawable/uploadtoftp100"
         android:layout_width="60dp"
         android:layout_height="60dp"

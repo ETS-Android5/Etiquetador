@@ -1,8 +1,10 @@
 package com.trimble.etiquetador;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.BroadcastReceiver;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.database.Cursor;
@@ -51,14 +53,26 @@ public class RfidActivity extends Activity implements Observer {
     private int numberTags;
     private ListView elements;
     private CodeBarAdapter adapter;
-    private  Map<String, String> codeBarRfid = new HashMap<String, String>();
+    private Map<String, String> codeBarRfid = new HashMap<String, String>();
     private DataBaseHelper myDbHelper;
     private int posteId;
 
     @Override
-    public void update(Object objeto){
+    public void update(final Object objeto){
         //eliminar el cable
-        Toast.makeText(getApplicationContext(), "Se Quiere eliminar: "+objeto, Toast.LENGTH_SHORT).show();
+        new AlertDialog.Builder(RfidActivity.this)
+                .setTitle("Confirmación de eliminar")
+                .setMessage("¿Está seguro de eliminar el cable "+objeto+"?")
+                .setIcon(android.R.drawable.ic_dialog_alert)
+                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int whichButton) {
+                        SQLiteDatabase db = myDbHelper.getReadableDatabase();
+                        String mySql = "DELETE FROM cables WHERE _id = "+objeto+";";
+                        db.execSQL(mySql);
+                        db.close();
+                        adapter.notifyDataSetChanged();
+                    }})
+                .setNegativeButton(android.R.string.no, null).show();
     }
 
     @Override
