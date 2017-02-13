@@ -37,6 +37,7 @@ public class ListadoCables extends Activity {
             Log.w("Database",sqle.getMessage());
         }
         cableadapter = new CableAdapter(this,cables);
+        /*
         listviewCable.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -47,6 +48,7 @@ public class ListadoCables extends Activity {
                 startActivity(intent);
             }
         });
+        */
         posteid = getIntent().getIntExtra("posteid",0);
         listviewCable.setAdapter(cableadapter);
         SQLiteDatabase db = myDbHelper.getReadableDatabase();

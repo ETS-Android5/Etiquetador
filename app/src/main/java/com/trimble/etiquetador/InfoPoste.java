@@ -107,17 +107,19 @@ public class InfoPoste extends Activity implements View.OnClickListener {
         startActivity(rfidIntent);
     }
 
-
-    @Override
-    public void onClick(View v) {
+    public void escanear(){
         IntentIntegrator integrator = new IntentIntegrator(this);
         integrator.setCaptureActivity(CaptureActivityPortrait.class);
-        //integrator.setOrientationLocked(false);
         integrator.setDesiredBarcodeFormats(IntentIntegrator.ONE_D_CODE_TYPES);
         integrator.setPrompt("Escanea Codigo de Barra");
         integrator.setCameraId(0);  // Use a specific camera of the device
         integrator.setBeepEnabled(true);
         integrator.initiateScan();
+    }
+
+    @Override
+    public void onClick(View v) {
+        escanear();
     }
 
     public void registrarCable(String barCode){
@@ -150,10 +152,11 @@ public class InfoPoste extends Activity implements View.OnClickListener {
         IntentResult result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
         if(result != null) {
             if(result.getContents() == null) {
-                Toast.makeText(this, "Cancelado", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Escaneo Terminado", Toast.LENGTH_SHORT).show();
             } else {
                 String code=result.getContents();
                 registrarCable(code);
+                escanear();
             }
         } else {
             // This is important, otherwise the result will not be passed to the fragment

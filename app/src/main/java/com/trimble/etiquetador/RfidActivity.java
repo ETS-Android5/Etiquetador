@@ -70,6 +70,12 @@ public class RfidActivity extends Activity implements Observer {
                         String mySql = "DELETE FROM cables WHERE _id = "+objeto+";";
                         db.execSQL(mySql);
                         db.close();
+                        for(int i=0;i<codeBars.size();i++) {
+                            if(codeBars.get(i).getCode()==objeto){
+                                codeBars.remove(i);
+                                break;
+                            }
+                        }
                         adapter.notifyDataSetChanged();
                     }})
                 .setNegativeButton(android.R.string.no, null).show();
@@ -240,6 +246,10 @@ public class RfidActivity extends Activity implements Observer {
         try {
             if (!mScanning) {
                 numberTags=0;
+                for(int i=0;i<codeBars.size();i++) {
+                    codeBars.get(i).setEstado(0);
+                }
+                adapter.notifyDataSetChanged();
                 RfidManager.startScan();
                 mScanning = true;
                 rfidState.setText("Detener");
@@ -252,10 +262,6 @@ public class RfidActivity extends Activity implements Observer {
                 //seekBar.setEnabled(true);
                 rfidState.setText("Escanear");
                 mBtn.setBackgroundResource(R.drawable.rfidsignal80);
-                for(int i=0;i<codeBars.size();i++) {
-                    codeBars.get(i).setEstado(0);
-                }
-                adapter.notifyDataSetChanged();
             }
         } catch (RfidException e) {
             Log.e(LOG_TAG, "Error attempting to start/stop scan.", e);

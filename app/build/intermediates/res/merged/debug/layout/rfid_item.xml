@@ -3,12 +3,12 @@
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <ImageButton
-        android:id="@+id/BtnDeleteCable"
-        android:background="@drawable/delete80"
-        android:layout_width="100dp"
-        android:layout_height="45dp"
-        android:layout_weight="1"/>
+    <ImageView
+        android:background="@drawable/barcode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="4"/>
+
     <TextView
         android:gravity="center_vertical|center_horizontal"
         android:id="@+id/txtRfidCode"
@@ -23,5 +23,11 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="4"/>
+    <ImageButton
+        android:id="@+id/BtnDeleteCable"
+        android:background="@drawable/delete80"
+        android:layout_width="100dp"
+        android:layout_height="45dp"
+        android:layout_weight="1"/>
 
 </LinearLayout>

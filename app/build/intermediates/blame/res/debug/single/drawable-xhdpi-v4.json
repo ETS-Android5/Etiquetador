@@ -1,14 +1,18 @@
 [
     {
-        "merged": "D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\round_button.xml",
-        "source": "D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\src\\main\\res\\drawable-xhdpi\\round_button.xml"
+        "merged": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\round_button.xml",
+        "source": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\src\\main\\res\\drawable-xhdpi\\round_button.xml"
     },
     {
-        "merged": "D:\\Users\\jorge\\Documents\\CVR\\CNEL\\Etiquetador\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\round_button.xml",
-        "source": "D:\\Users\\jorge\\Documents\\CVR\\CNEL\\Etiquetador\\app\\src\\main\\res\\drawable-xhdpi\\round_button.xml"
+        "merged": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/round_button.xml",
+        "source": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/app/src/main/res/drawable-xhdpi/round_button.xml"
     },
     {
-        "merged": "D:\\Users\\jorge\\Documents\\CVR\\CNEL\\Etiquetador\\D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\round_button.xml",
-        "source": "D:\\Users\\jorge\\Documents\\CVR\\CNEL\\Etiquetador\\D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\src\\main\\res\\drawable-xhdpi\\round_button.xml"
+        "merged": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/D:\\Users\\jorge\\Documents\\CVR\\CNEL\\Etiquetador\\D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\round_button.xml",
+        "source": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/D:\\Users\\jorge\\Documents\\CVR\\CNEL\\Etiquetador\\D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\src\\main\\res\\drawable-xhdpi\\round_button.xml"
+    },
+    {
+        "merged": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/D:\\Users\\jorge\\Documents\\CVR\\CNEL\\Etiquetador\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\round_button.xml",
+        "source": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/D:\\Users\\jorge\\Documents\\CVR\\CNEL\\Etiquetador\\app\\src\\main\\res\\drawable-xhdpi\\round_button.xml"
     }
 ]

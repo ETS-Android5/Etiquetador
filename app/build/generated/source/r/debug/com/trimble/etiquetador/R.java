@@ -70,28 +70,29 @@ containing a value of this type.
     }
     public static final class drawable {
         public static final int add_column96=0x7f020000;
-        public static final int barcodescanner80=0x7f020001;
-        public static final int cable_features=0x7f020002;
-        public static final int checkmark=0x7f020003;
-        public static final int cnel=0x7f020004;
-        public static final int connection_sync100=0x7f020005;
-        public static final int data_pending96=0x7f020006;
-        public static final int delete80=0x7f020007;
-        public static final int delete96=0x7f020008;
-        public static final int editproperty100=0x7f020009;
-        public static final int finalizar=0x7f02000a;
-        public static final int ic_launcher=0x7f02000b;
-        public static final int product96=0x7f02000c;
-        public static final int question_mark96=0x7f02000d;
-        public static final int rfidsensor80=0x7f02000e;
-        public static final int rfidsignal100=0x7f02000f;
-        public static final int rfidsignal80=0x7f020010;
-        public static final int round_button=0x7f020011;
-        public static final int sewing_tape_measure96=0x7f020012;
-        public static final int uploadtoftp100=0x7f020013;
+        public static final int barcode=0x7f020001;
+        public static final int barcodescanner80=0x7f020002;
+        public static final int cable_features=0x7f020003;
+        public static final int checkmark=0x7f020004;
+        public static final int cnel=0x7f020005;
+        public static final int connection_sync100=0x7f020006;
+        public static final int data_pending96=0x7f020007;
+        public static final int delete80=0x7f020008;
+        public static final int delete96=0x7f020009;
+        public static final int editproperty100=0x7f02000a;
+        public static final int finalizar=0x7f02000b;
+        public static final int ic_launcher=0x7f02000c;
+        public static final int product96=0x7f02000d;
+        public static final int question_mark96=0x7f02000e;
+        public static final int rfidsensor80=0x7f02000f;
+        public static final int rfidsignal100=0x7f020010;
+        public static final int rfidsignal80=0x7f020011;
+        public static final int round_button=0x7f020012;
+        public static final int sewing_tape_measure96=0x7f020013;
+        public static final int uploadtoftp100=0x7f020014;
     }
     public static final class id {
-        public static final int BtnDeleteCable=0x7f090056;
+        public static final int BtnDeleteCable=0x7f090058;
         public static final int activity_lista_finalizados=0x7f090018;
         public static final int activity_listado_cables=0x7f09001a;
         public static final int activity_listado_postes=0x7f09001c;
@@ -120,7 +121,7 @@ containing a value of this type.
         public static final int eliminar=0x7f090044;
         public static final int etData=0x7f09004d;
         public static final int fin=0x7f09002b;
-        public static final int imgEstado=0x7f090058;
+        public static final int imgEstado=0x7f090057;
         public static final int listRfid=0x7f09004e;
         public static final int lista=0x7f090023;
         public static final int listadocables=0x7f09001b;
@@ -158,7 +159,7 @@ containing a value of this type.
         public static final int textView9=0x7f09000a;
         public static final int transferir=0x7f090033;
         public static final int txtCode=0x7f090007;
-        public static final int txtRfidCode=0x7f090057;
+        public static final int txtRfidCode=0x7f090056;
         public static final int txtdB=0x7f09004b;
         public static final int user=0x7f090028;
         public static final int viewDimension=0x7f09003a;
