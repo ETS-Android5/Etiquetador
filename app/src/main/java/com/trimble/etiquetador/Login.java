@@ -5,8 +5,10 @@ import android.content.Intent;
 import android.database.SQLException;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.IOException;
 
@@ -36,5 +38,16 @@ public class Login extends Activity {
 			Intent intent = new Intent(this, Menu.class);
 			startActivity(intent);
 		}
+		else{
+			Toast toast = Toast.makeText(Login.this,"Usuario y/o Contraseña incorrecta",Toast.LENGTH_SHORT);
+			toast.setGravity(Gravity.TOP, 0, 450);
+			toast.show();
+		}
+	}
+
+	@Override
+	public void onBackPressed()
+	{
+
 	}
 }

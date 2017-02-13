@@ -15,7 +15,9 @@ import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ListView;
@@ -199,6 +201,38 @@ public class RfidActivity extends Activity implements Observer {
         });
     }
 
+    public void finalizarPoste(View view){
+        new AlertDialog.Builder(this)
+                .setTitle("Confirmación de finalizar")
+                .setMessage("¿Está seguro de haber terminado de editar el poste?")
+                .setIcon(android.R.drawable.ic_dialog_alert)
+                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int whichButton) {
+                        if(numberTags == codeBars.size()){
+                            SQLiteDatabase db = myDbHelper.getReadableDatabase();
+                            String mySql = "UPDATE postes SET estado = 2 WHERE _id = "+posteId+";";
+                            db.execSQL(mySql);
+                            db.close();
+                            if (mScanning) {
+                                try {
+                                    RfidManager.stopScan();
+                                }catch (RfidException e) {
+                                    Log.w("Error", e.getMessage());
+                                }
+                                mScanning = false;
+                            }
+                            Intent intent = new Intent(RfidActivity.this, ListadoPostes.class);
+                            startActivity(intent);
+                        }
+                        else{
+                            Toast toast = Toast.makeText(RfidActivity.this,"Es necesario que se verifiquen todos los TAGS antes de finalizar",Toast.LENGTH_LONG);
+                            toast.setGravity(Gravity.TOP, 0, 520);
+                            toast.show();
+                        }
+                    }})
+                .setNegativeButton(android.R.string.no, null).show();
+    }
+
     private void onRfidReady() {
         try {
             // Set output mode to 'Intent' mode so that broadcast
@@ -253,6 +287,9 @@ public class RfidActivity extends Activity implements Observer {
                 RfidManager.startScan();
                 mScanning = true;
                 rfidState.setText("Detener");
+                ViewGroup.MarginLayoutParams mlp = (ViewGroup.MarginLayoutParams) rfidState
+                        .getLayoutParams();
+                mlp.setMargins(57, 8, 10, 0);
                 mBtn.setBackgroundResource(R.drawable.rfidsignal100);
                 seekBar.setEnabled(false);
             }
@@ -261,6 +298,9 @@ public class RfidActivity extends Activity implements Observer {
                 mScanning = false;
                 //seekBar.setEnabled(true);
                 rfidState.setText("Escanear");
+                ViewGroup.MarginLayoutParams mlp = (ViewGroup.MarginLayoutParams) rfidState
+                        .getLayoutParams();
+                mlp.setMargins(53, 8, 0, 0);
                 mBtn.setBackgroundResource(R.drawable.rfidsignal80);
             }
         } catch (RfidException e) {
@@ -272,6 +312,14 @@ public class RfidActivity extends Activity implements Observer {
     public void onBackPressed()
     {
         super.onBackPressed();
+        if (mScanning) {
+            try {
+                RfidManager.stopScan();
+            }catch (RfidException e) {
+                Log.w("Error", e.getMessage());
+            }
+            mScanning = false;
+        }
         startActivity(new Intent(this, InfoPoste.class));
         finish();
     }

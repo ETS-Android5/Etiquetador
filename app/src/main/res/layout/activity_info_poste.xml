@@ -82,7 +82,7 @@ android:background="@color/blue"
         android:layout_centerHorizontal="true"/>
 
     <ImageButton
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="220dp"
         android:background="@drawable/barcodescanner80"
         android:layout_width="60dp"
         android:layout_height="60dp"
@@ -105,7 +105,7 @@ android:background="@color/blue"
         />
 
     <ImageButton
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="220dp"
         android:background="@drawable/rfidsensor80"
         android:layout_width="60dp"
         android:layout_height="60dp"
@@ -136,8 +136,7 @@ android:background="@color/blue"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:id="@+id/button10"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="30dp" />
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:text="Cables"
@@ -149,31 +148,6 @@ android:background="@color/blue"
         android:id="@+id/textView14"
         android:layout_below="@id/button10"
         android:layout_marginTop="5dp"
-        android:layout_marginLeft="30dp"
-        />
-
-    <ImageButton
-        android:layout_marginTop="320dp"
-        android:background="@drawable/finalizar"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:onClick="returnListaPoste"
-        android:id="@+id/button11"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="30dp"
-        />
-
-    <TextView
-        android:text="Finalizar"
-        android:typeface="monospace"
-        android:textSize="15sp"
-        android:textColor="@color/white"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView15"
-        android:layout_below="@id/button11"
-        android:layout_marginTop="5dp"
-        android:layout_marginRight="15dp"
-        android:layout_alignParentRight="true"
+        android:layout_centerHorizontal="true"
         />
 </RelativeLayout>

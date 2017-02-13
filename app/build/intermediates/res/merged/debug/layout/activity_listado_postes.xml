@@ -65,10 +65,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:ems="5"
-        android:textSize="15sp"
+        android:ems="8"
+        android:textSize="18sp"
         android:id="@+id/posteid"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="40dp"
         android:layout_centerHorizontal="true"
         android:layout_marginLeft="20dp"/>
 

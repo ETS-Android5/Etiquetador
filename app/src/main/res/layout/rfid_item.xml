@@ -5,29 +5,29 @@
     android:layout_height="match_parent">
     <ImageView
         android:background="@drawable/barcode"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="4"/>
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_weight="1"/>
 
     <TextView
         android:gravity="center_vertical|center_horizontal"
         android:id="@+id/txtRfidCode"
         android:typeface="monospace"
-        android:textSize="20sp"
-        android:layout_width="match_parent"
+        android:textSize="17sp"
+        android:layout_width="100dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
         />
     <ImageView
         android:id="@+id/imgEstado"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="4"/>
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:layout_weight="1"/>
     <ImageButton
         android:id="@+id/BtnDeleteCable"
         android:background="@drawable/delete80"
-        android:layout_width="100dp"
-        android:layout_height="45dp"
+        android:layout_width="20dp"
+        android:layout_height="40dp"
         android:layout_weight="1"/>
 
 </LinearLayout>

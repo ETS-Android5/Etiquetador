@@ -46,26 +46,55 @@
             android:layout_width="match_parent"
             android:layout_height="250dp">
         </ListView>
-        <ImageButton
-            android:id="@+id/btn_scan"
-            android:background="@drawable/rfidsignal80"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_alignRight="@+id/etData"
-            android:layout_below="@+id/etData"
-            android:onClick="startScan"
-            android:layout_gravity="center_horizontal"
-            />
-        <TextView
-            android:text="Escanear"
-            android:typeface="monospace"
-            android:textColor="@color/white"
-            android:textSize="15sp"
-            android:gravity="center_horizontal"
-            android:id="@+id/rfidState"
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            />
+            android:orientation="horizontal">
+            <ImageButton
+                android:id="@+id/btn_scan"
+                android:background="@drawable/rfidsignal80"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:onClick="startScan"
+                android:layout_marginLeft="40dp"
+                />
+            <ImageButton
+                android:id="@+id/btn_finalizar"
+                android:background="@drawable/finalizar"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginLeft="70dp"
+                android:layout_toRightOf="@id/btn_scan"
+                android:onClick="finalizarPoste"
+                />
+            <TextView
+                android:text="Escanear"
+                android:typeface="monospace"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                android:id="@+id/rfidState"
+                android:layout_marginTop="5dp"
+                android:layout_below="@id/btn_scan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="35dp"
+                />
+            <TextView
+                android:text="Finalizar"
+                android:typeface="monospace"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                android:layout_marginTop="5dp"
+                android:id="@+id/textView18"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/rfidState"
+                android:layout_below="@id/btn_finalizar"
+                android:layout_marginLeft="53dp"
+                />
+        </RelativeLayout>
+
+
     </LinearLayout>
 
 

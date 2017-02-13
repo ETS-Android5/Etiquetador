@@ -96,7 +96,7 @@
         android:layout_marginLeft="15dp"/>
 
     <ImageButton
-        android:background="@drawable/connection_sync100"
+        android:background="@drawable/downloadfromftp96"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_alignTop="@+id/transferir"

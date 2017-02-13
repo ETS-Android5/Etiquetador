@@ -176,23 +176,6 @@ public class InfoPoste extends Activity implements View.OnClickListener {
         startActivity(intent);
     }
 
-    public void returnListaPoste(View view){
-        new AlertDialog.Builder(this)
-                .setTitle("Confirmación de finalizar")
-                .setMessage("¿Está seguro de haber terminado de editar el poste?")
-                .setIcon(android.R.drawable.ic_dialog_alert)
-                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int whichButton) {
-                        SQLiteDatabase db = myDbHelper.getReadableDatabase();
-                        String mySql = "UPDATE postes SET estado = 2 WHERE _id = "+posteid+";";
-                        db.execSQL(mySql);
-                        db.close();
-                        Intent intent = new Intent(InfoPoste.this, ListadoPostes.class);
-                        startActivity(intent);
-                    }})
-                    .setNegativeButton(android.R.string.no, null).show();
-    }
-
     @Override
     public void onBackPressed()
     {
