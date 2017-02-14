@@ -16,6 +16,7 @@ import android.util.Log;
 import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
@@ -133,15 +134,21 @@ public class InfoPoste extends Activity implements View.OnClickListener {
         String mySql = "SELECT _id FROM cables WHERE _id = '"+barCode+"';";
         Cursor c = db.rawQuery(mySql, null);
         if(c.getCount() == 1){
-            Toast toast = Toast.makeText(this,"Error: Ya existe un Cable con ese ID",Toast.LENGTH_LONG);
+            Toast toast = Toast.makeText(this,"Tag Repetido",Toast.LENGTH_LONG);
             toast.setGravity(Gravity.TOP| Gravity.LEFT, 80, 310);
+            ViewGroup group = (ViewGroup) toast.getView();
+            TextView messageTextView = (TextView) group.getChildAt(0);
+            messageTextView.setTextSize(40);
             toast.show();
         }
         else{
             mySql = "INSERT INTO cables (_id,posteid,tipo,dimension,escable,operadora,usuario) VALUES ('"+barCode+"','"+posteid+"','','',"+0+",'','cnel');";
             db.execSQL(mySql);
-            Toast toast = Toast.makeText(this,"Cable Registrado: "+barCode,Toast.LENGTH_LONG);
-            toast.setGravity(Gravity.TOP| Gravity.LEFT, 80, 310);
+            Toast toast = Toast.makeText(this,barCode,Toast.LENGTH_LONG);
+            toast.setGravity(Gravity.TOP | Gravity.LEFT, 80, 310);
+            ViewGroup group = (ViewGroup) toast.getView();
+            TextView messageTextView = (TextView) group.getChildAt(0);
+            messageTextView.setTextSize(40);
             toast.show();
         }
         c.close();

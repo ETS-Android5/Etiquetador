@@ -1,90 +1,178 @@
 [
     {
-        "merged": "D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\rfidsignal100.png",
-        "source": "D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\src\\main\\res\\drawable-xhdpi\\rfidsignal100.png"
+        "merged": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\usercredentials80.png",
+        "source": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\src\\main\\res\\drawable-xhdpi\\usercredentials80.png"
     },
     {
-        "merged": "D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\usercredentials80.png",
-        "source": "D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\src\\main\\res\\drawable-xhdpi\\usercredentials80.png"
+        "merged": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/app/build/intermediates/res/merged/debug/drawable-xhdpi/add_column96.png",
+        "source": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/app/src/main/res/drawable-xhdpi/add_column96.png"
     },
     {
-        "merged": "D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\checkmark.png",
-        "source": "D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\src\\main\\res\\drawable-xhdpi\\checkmark.png"
+        "merged": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\barcodescanner80.png",
+        "source": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\src\\main\\res\\drawable-xhdpi\\barcodescanner80.png"
     },
     {
-        "merged": "D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\barcodescanner80.png",
-        "source": "D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\src\\main\\res\\drawable-xhdpi\\barcodescanner80.png"
+        "merged": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/app/build/intermediates/res/merged/debug/drawable-xhdpi/product96.png",
+        "source": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/app/src/main/res/drawable-xhdpi/product96.png"
     },
     {
-        "merged": "D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\rfidsignal80.png",
-        "source": "D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\src\\main\\res\\drawable-xhdpi\\rfidsignal80.png"
+        "merged": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\rfidsignal80.png",
+        "source": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\src\\main\\res\\drawable-xhdpi\\rfidsignal80.png"
     },
     {
-        "merged": "D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\product96.png",
-        "source": "D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\src\\main\\res\\drawable-xhdpi\\product96.png"
+        "merged": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/app/build/intermediates/res/merged/debug/drawable-xhdpi/connection_sync100.png",
+        "source": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/app/src/main/res/drawable-xhdpi/connection_sync100.png"
     },
     {
-        "merged": "D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\data_pending96.png",
-        "source": "D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\src\\main\\res\\drawable-xhdpi\\data_pending96.png"
+        "merged": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\sewing_tape_measure96.png",
+        "source": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\src\\main\\res\\drawable-xhdpi\\sewing_tape_measure96.png"
     },
     {
-        "merged": "D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\sewing_tape_measure96.png",
-        "source": "D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\src\\main\\res\\drawable-xhdpi\\sewing_tape_measure96.png"
+        "merged": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/app/build/intermediates/res/merged/debug/drawable-xhdpi/checkmark.png",
+        "source": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/app/src/main/res/drawable-xhdpi/checkmark.png"
     },
     {
-        "merged": "D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\downloadfromftp96.png",
-        "source": "D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\src\\main\\res\\drawable-xhdpi\\downloadfromftp96.png"
+        "merged": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\cable_features.png",
+        "source": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\src\\main\\res\\drawable-xhdpi\\cable_features.png"
     },
     {
-        "merged": "D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\cable_features.png",
-        "source": "D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\src\\main\\res\\drawable-xhdpi\\cable_features.png"
+        "merged": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/app/build/intermediates/res/merged/debug/drawable-xhdpi/delete96.png",
+        "source": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/app/src/main/res/drawable-xhdpi/delete96.png"
     },
     {
-        "merged": "D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\ic_launcher.png",
-        "source": "D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\src\\main\\res\\drawable-xhdpi\\ic_launcher.png"
+        "merged": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\ic_launcher.png",
+        "source": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\src\\main\\res\\drawable-xhdpi\\ic_launcher.png"
     },
     {
-        "merged": "D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\barcode.png",
-        "source": "D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\src\\main\\res\\drawable-xhdpi\\barcode.png"
+        "merged": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\delete96.png",
+        "source": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\src\\main\\res\\drawable-xhdpi\\delete96.png"
     },
     {
-        "merged": "D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\delete96.png",
-        "source": "D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\src\\main\\res\\drawable-xhdpi\\delete96.png"
+        "merged": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/app/build/intermediates/res/merged/debug/drawable-xhdpi/finalizar.png",
+        "source": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/app/src/main/res/drawable-xhdpi/finalizar.png"
     },
     {
-        "merged": "D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\editproperty100.png",
-        "source": "D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\src\\main\\res\\drawable-xhdpi\\editproperty100.png"
+        "merged": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\cnel.png",
+        "source": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\src\\main\\res\\drawable-xhdpi\\cnel.png"
     },
     {
-        "merged": "D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\cnel.png",
-        "source": "D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\src\\main\\res\\drawable-xhdpi\\cnel.png"
+        "merged": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\add_column96.png",
+        "source": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\src\\main\\res\\drawable-xhdpi\\add_column96.png"
     },
     {
-        "merged": "D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\connection_sync100.png",
-        "source": "D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\src\\main\\res\\drawable-xhdpi\\connection_sync100.png"
+        "merged": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/app/build/intermediates/res/merged/debug/drawable-xhdpi/uploadtoftp100.png",
+        "source": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/app/src/main/res/drawable-xhdpi/uploadtoftp100.png"
     },
     {
-        "merged": "D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\add_column96.png",
-        "source": "D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\src\\main\\res\\drawable-xhdpi\\add_column96.png"
+        "merged": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/app/build/intermediates/res/merged/debug/drawable-xhdpi/question_mark96.png",
+        "source": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/app/src/main/res/drawable-xhdpi/question_mark96.png"
     },
     {
-        "merged": "D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\uploadtoftp100.png",
-        "source": "D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\src\\main\\res\\drawable-xhdpi\\uploadtoftp100.png"
+        "merged": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/app/build/intermediates/res/merged/debug/drawable-xhdpi/cable_features.png",
+        "source": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/app/src/main/res/drawable-xhdpi/cable_features.png"
     },
     {
-        "merged": "D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\delete80.png",
-        "source": "D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\src\\main\\res\\drawable-xhdpi\\delete80.png"
+        "merged": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\rfidsensor80.png",
+        "source": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\src\\main\\res\\drawable-xhdpi\\rfidsensor80.png"
     },
     {
-        "merged": "D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\rfidsensor80.png",
-        "source": "D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\src\\main\\res\\drawable-xhdpi\\rfidsensor80.png"
+        "merged": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/app/build/intermediates/res/merged/debug/drawable-xhdpi/cnel.png",
+        "source": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/app/src/main/res/drawable-xhdpi/cnel.png"
     },
     {
-        "merged": "D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\finalizar.png",
-        "source": "D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\src\\main\\res\\drawable-xhdpi\\finalizar.png"
+        "merged": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/app/build/intermediates/res/merged/debug/drawable-xhdpi/downloadfromftp96.png",
+        "source": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/app/src/main/res/drawable-xhdpi/downloadfromftp96.png"
     },
     {
-        "merged": "D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\question_mark96.png",
-        "source": "D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\src\\main\\res\\drawable-xhdpi\\question_mark96.png"
+        "merged": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\question_mark96.png",
+        "source": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\src\\main\\res\\drawable-xhdpi\\question_mark96.png"
+    },
+    {
+        "merged": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\rfidsignal100.png",
+        "source": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\src\\main\\res\\drawable-xhdpi\\rfidsignal100.png"
+    },
+    {
+        "merged": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/app/build/intermediates/res/merged/debug/drawable-xhdpi/delete80.png",
+        "source": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/app/src/main/res/drawable-xhdpi/delete80.png"
+    },
+    {
+        "merged": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/app/build/intermediates/res/merged/debug/drawable-xhdpi/data_pending96.png",
+        "source": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/app/src/main/res/drawable-xhdpi/data_pending96.png"
+    },
+    {
+        "merged": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\checkmark.png",
+        "source": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\src\\main\\res\\drawable-xhdpi\\checkmark.png"
+    },
+    {
+        "merged": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/app/build/intermediates/res/merged/debug/drawable-xhdpi/rfidsignal100.png",
+        "source": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/app/src/main/res/drawable-xhdpi/rfidsignal100.png"
+    },
+    {
+        "merged": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/app/build/intermediates/res/merged/debug/drawable-xhdpi/editproperty100.png",
+        "source": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/app/src/main/res/drawable-xhdpi/editproperty100.png"
+    },
+    {
+        "merged": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\product96.png",
+        "source": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\src\\main\\res\\drawable-xhdpi\\product96.png"
+    },
+    {
+        "merged": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\data_pending96.png",
+        "source": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\src\\main\\res\\drawable-xhdpi\\data_pending96.png"
+    },
+    {
+        "merged": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/app/build/intermediates/res/merged/debug/drawable-xhdpi/ic_launcher.png",
+        "source": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/app/src/main/res/drawable-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/app/build/intermediates/res/merged/debug/drawable-xhdpi/barcode.png",
+        "source": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/app/src/main/res/drawable-xhdpi/barcode.png"
+    },
+    {
+        "merged": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\downloadfromftp96.png",
+        "source": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\src\\main\\res\\drawable-xhdpi\\downloadfromftp96.png"
+    },
+    {
+        "merged": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/app/build/intermediates/res/merged/debug/drawable-xhdpi/rfidsensor80.png",
+        "source": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/app/src/main/res/drawable-xhdpi/rfidsensor80.png"
+    },
+    {
+        "merged": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/app/build/intermediates/res/merged/debug/drawable-xhdpi/barcodescanner80.png",
+        "source": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/app/src/main/res/drawable-xhdpi/barcodescanner80.png"
+    },
+    {
+        "merged": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\barcode.png",
+        "source": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\src\\main\\res\\drawable-xhdpi\\barcode.png"
+    },
+    {
+        "merged": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/app/build/intermediates/res/merged/debug/drawable-xhdpi/rfidsignal80.png",
+        "source": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/app/src/main/res/drawable-xhdpi/rfidsignal80.png"
+    },
+    {
+        "merged": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\editproperty100.png",
+        "source": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\src\\main\\res\\drawable-xhdpi\\editproperty100.png"
+    },
+    {
+        "merged": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\connection_sync100.png",
+        "source": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\src\\main\\res\\drawable-xhdpi\\connection_sync100.png"
+    },
+    {
+        "merged": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\uploadtoftp100.png",
+        "source": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\src\\main\\res\\drawable-xhdpi\\uploadtoftp100.png"
+    },
+    {
+        "merged": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\delete80.png",
+        "source": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\src\\main\\res\\drawable-xhdpi\\delete80.png"
+    },
+    {
+        "merged": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/app/build/intermediates/res/merged/debug/drawable-xhdpi/sewing_tape_measure96.png",
+        "source": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/app/src/main/res/drawable-xhdpi/sewing_tape_measure96.png"
+    },
+    {
+        "merged": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/app/build/intermediates/res/merged/debug/drawable-xhdpi/usercredentials80.png",
+        "source": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/app/src/main/res/drawable-xhdpi/usercredentials80.png"
+    },
+    {
+        "merged": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\finalizar.png",
+        "source": "/Users/jorge/Documents/CVR/CNEL/Etiquetador/D:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\src\\main\\res\\drawable-xhdpi\\finalizar.png"
     }
 ]

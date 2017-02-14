@@ -73,8 +73,12 @@ public class RfidActivity extends Activity implements Observer {
                         db.execSQL(mySql);
                         db.close();
                         for(int i=0;i<codeBars.size();i++) {
-                            if(codeBars.get(i).getCode()==objeto){
+                            CodeBar c=codeBars.get(i);
+                            if(c.getCode()==objeto){
                                 codeBars.remove(i);
+                                if(c.getEstado()==1){
+                                    numberTags--;
+                                }
                                 break;
                             }
                         }
@@ -211,31 +215,35 @@ public class RfidActivity extends Activity implements Observer {
                 .setIcon(android.R.drawable.ic_dialog_alert)
                 .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int whichButton) {
-                        if(numberTags == codeBars.size()){
+                        if (numberTags == codeBars.size()) {
                             SQLiteDatabase db = myDbHelper.getReadableDatabase();
-                            String mySql = "UPDATE postes SET estado = 2 WHERE _id = "+posteId+";";
+                            String mySql = "UPDATE postes SET estado = 2 WHERE _id = " + posteId + ";";
                             db.execSQL(mySql);
                             db.close();
-
-                            if (mScanning) {
-                                try {
+                            try {
+                                if (mScanning) {
                                     RfidManager.stopScan();
-                                    RfidManager.deinit();
-                                }catch (RfidException e) {
-                                    Log.w("Error", e.getMessage());
+                                    mScanning = false;
+                                    //seekBar.setEnabled(true);
+                                    rfidState.setText("Escanear");
+                                    ViewGroup.MarginLayoutParams mlp = (ViewGroup.MarginLayoutParams) rfidState
+                                            .getLayoutParams();
+                                    mlp.setMargins(53, 8, 0, 0);
+                                    mBtn.setBackgroundResource(R.drawable.rfidsignal80);
                                 }
-                                mScanning = false;
+                                onDestroy();
+                            } catch (Exception e) {
+                                Log.e(LOG_TAG, "Error al finalizar ", e);
                             }
-
                             Intent intent = new Intent(RfidActivity.this, ListadoPostes.class);
                             startActivity(intent);
-                        }
-                        else{
-                            Toast toast = Toast.makeText(RfidActivity.this,"Es necesario que se verifiquen todos los TAGS antes de finalizar",Toast.LENGTH_LONG);
+                        } else {
+                            Toast toast = Toast.makeText(RfidActivity.this, "Es necesario que se verifiquen todos los TAGS antes de finalizar", Toast.LENGTH_LONG);
                             toast.setGravity(Gravity.TOP, 0, 520);
                             toast.show();
                         }
-                    }})
+                    }
+                })
                 .setNegativeButton(android.R.string.no, null).show();
     }
 
@@ -318,13 +326,20 @@ public class RfidActivity extends Activity implements Observer {
     public void onBackPressed()
     {
         super.onBackPressed();
-        if (mScanning) {
-            try {
+        try {
+            if (mScanning) {
                 RfidManager.stopScan();
-            }catch (RfidException e) {
-                Log.w("Error", e.getMessage());
+                mScanning = false;
+                //seekBar.setEnabled(true);
+                rfidState.setText("Escanear");
+                ViewGroup.MarginLayoutParams mlp = (ViewGroup.MarginLayoutParams) rfidState
+                        .getLayoutParams();
+                mlp.setMargins(53, 8, 0, 0);
+                mBtn.setBackgroundResource(R.drawable.rfidsignal80);
             }
-            mScanning = false;
+            //onDestroy();
+        } catch (Exception e) {
+            Log.e(LOG_TAG, "Error on back pressed", e);
         }
         startActivity(new Intent(this, InfoPoste.class));
         finish();
