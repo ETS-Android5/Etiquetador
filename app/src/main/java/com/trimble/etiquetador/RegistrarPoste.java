@@ -257,6 +257,7 @@ public class RegistrarPoste extends Activity {
                                 Intent intent = new Intent(RegistrarPoste.this,ListadoRepetidos.class);
                                 intent.putExtra("postes",postes);
                                 startActivity(intent);
+                                finish();
                             }})
                         .setNegativeButton(android.R.string.no, null).show();
             }
@@ -298,6 +299,7 @@ public class RegistrarPoste extends Activity {
                         intent.putExtra("NCables",0);
                         intent.putExtra("Ventana","nuevo");
                         startActivity(intent);
+                        finish();
                     } else if (GPSstatus.equals("GPS_SEARCHING")) {
                         Toast toast = Toast.makeText(this, "Buscando su posición GPS...", Toast.LENGTH_SHORT);
                         toast.setGravity(Gravity.TOP | Gravity.LEFT, 70, 500);

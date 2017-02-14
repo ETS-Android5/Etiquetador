@@ -66,6 +66,7 @@ public class ListadoPostes extends Activity {
                 db.execSQL(mySql);
                 db.close();
                 startActivity(intent);
+                finish();
             }
         });
         listviewPoste.setAdapter(posteadapter);
@@ -119,6 +120,7 @@ public class ListadoPostes extends Activity {
     public void registrarNuevoPoste(View view){
         Intent intent = new Intent(this, RegistrarPoste.class);
         startActivity(intent);
+        finish();
     }
 
 

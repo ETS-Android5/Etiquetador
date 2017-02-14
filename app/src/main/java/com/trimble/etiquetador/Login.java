@@ -37,6 +37,7 @@ public class Login extends Activity {
 		if(user.equals("cnel") && password.equals("123")){
 			Intent intent = new Intent(this, Menu.class);
 			startActivity(intent);
+			finish();
 		}
 		else{
 			Toast toast = Toast.makeText(Login.this,"Usuario y/o Contraseña incorrecta",Toast.LENGTH_SHORT);
@@ -48,6 +49,6 @@ public class Login extends Activity {
 	@Override
 	public void onBackPressed()
 	{
-
+		finish();
 	}
 }

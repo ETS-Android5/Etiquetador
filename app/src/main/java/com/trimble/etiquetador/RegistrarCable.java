@@ -125,6 +125,7 @@ public class RegistrarCable extends Activity {
         Intent intent = new Intent(this, InfoPoste.class);
         intent.putExtra("NCables", ncables);
         startActivity(intent);
+        finish();
     }
 
     public void eliminarCable(View view){
@@ -146,6 +147,7 @@ public class RegistrarCable extends Activity {
         Intent intent = new Intent(this, InfoPoste.class);
         intent.putExtra("NCables", ncables);
         startActivity(intent);
+        finish();
     }
 
     public void modificarCable(View view){
@@ -176,6 +178,7 @@ public class RegistrarCable extends Activity {
         Intent intent = new Intent(this, InfoPoste.class);
         intent.putExtra("NCables", ncables);
         startActivity(intent);
+        finish();
     }
 
     public void registrarCableBase(View view){
@@ -210,5 +213,6 @@ public class RegistrarCable extends Activity {
         c.close();
         db.close();
         startActivity(intent);
+        finish();
     }
 }

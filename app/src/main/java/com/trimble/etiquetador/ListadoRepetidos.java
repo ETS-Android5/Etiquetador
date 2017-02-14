@@ -56,6 +56,7 @@ public class ListadoRepetidos extends Activity {
                 db.execSQL(mySql);
                 db.close();
                 startActivity(intent);
+                finish();
             }
         });
         listviewPoste.setAdapter(posteadapter);
@@ -64,5 +65,6 @@ public class ListadoRepetidos extends Activity {
     public void regresarRegistrarPoste(View view){
         Intent intent = new Intent(this, RegistrarPoste.class);
         startActivity(intent);
+        finish();
     }
 }

@@ -48,6 +48,7 @@ public class PostesPendientes extends Activity {
                 postes.clear();
                 posteadapter.notifyDataSetChanged();
                 startActivity(intent);
+                finish();
             }
         });
         listviewPoste.setAdapter(posteadapter);

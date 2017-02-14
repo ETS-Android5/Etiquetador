@@ -50,6 +50,7 @@ public class Menu extends Activity {
     public void iniciarMedicion(View view){
         Intent intent = new Intent(this, ListadoPostes.class);
         startActivity(intent);
+        finish();
     }
 
     @Override
@@ -72,6 +73,7 @@ public class Menu extends Activity {
         else{
             Intent intent = new Intent(this, PostesPendientes.class);
             startActivity(intent);
+            finish();
         }
     }
 
@@ -87,6 +89,7 @@ public class Menu extends Activity {
         else{
             Intent intent = new Intent(this, listaFinalizados.class);
             startActivity(intent);
+            finish();
         }
     }
 

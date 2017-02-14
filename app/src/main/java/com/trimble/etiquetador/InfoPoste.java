@@ -106,6 +106,7 @@ public class InfoPoste extends Activity implements View.OnClickListener {
         Intent rfidIntent = new Intent(this,RfidActivity.class);
         rfidIntent.putExtra("posteId",posteid);
         startActivity(rfidIntent);
+        finish();
     }
 
     public void escanear(){
@@ -181,6 +182,7 @@ public class InfoPoste extends Activity implements View.OnClickListener {
         Intent intent = new Intent(this,ListadoCables.class);
         intent.putExtra("posteid",posteid);
         startActivity(intent);
+        finish();
     }
 
     @Override

@@ -237,6 +237,7 @@ public class RfidActivity extends Activity implements Observer {
                             }
                             Intent intent = new Intent(RfidActivity.this, ListadoPostes.class);
                             startActivity(intent);
+                            finish();
                         } else {
                             Toast toast = Toast.makeText(RfidActivity.this, "Es necesario que se verifiquen todos los TAGS antes de finalizar", Toast.LENGTH_LONG);
                             toast.setGravity(Gravity.TOP, 0, 520);
