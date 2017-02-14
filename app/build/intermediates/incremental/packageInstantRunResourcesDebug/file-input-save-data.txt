@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Mon Feb 13 11:47:07 COT 2017
+#Mon Feb 13 13:04:36 COT 2017
 25.file=D\:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\layout\\activity_info_poste.xml
 41.base=D\:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\build\\intermediates\\res\\resources-debug.ap_
 25.base=D\:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\build\\intermediates\\res\\resources-debug.ap_

@@ -79,6 +79,7 @@ public class RfidActivity extends Activity implements Observer {
                             }
                         }
                         adapter.notifyDataSetChanged();
+                        ((TextView)findViewById(R.id.etData)).setText("Tags Detectados: " + numberTags +"/"+codeBars.size());
                     }})
                 .setNegativeButton(android.R.string.no, null).show();
     }
@@ -149,6 +150,8 @@ public class RfidActivity extends Activity implements Observer {
             do{
                 String codeNumber=c.getString(c.getColumnIndex("_id"));
                 String rfid=codeBarRfid.get(codeNumber);
+                if(rfid==null)
+                    rfid="";
                 codeBars.add(new CodeBar(c.getString(c.getColumnIndex("_id")),0,rfid));
                 c.moveToNext();
             }while(!c.isAfterLast());
@@ -213,14 +216,17 @@ public class RfidActivity extends Activity implements Observer {
                             String mySql = "UPDATE postes SET estado = 2 WHERE _id = "+posteId+";";
                             db.execSQL(mySql);
                             db.close();
+
                             if (mScanning) {
                                 try {
                                     RfidManager.stopScan();
+                                    RfidManager.deinit();
                                 }catch (RfidException e) {
                                     Log.w("Error", e.getMessage());
                                 }
                                 mScanning = false;
                             }
+
                             Intent intent = new Intent(RfidActivity.this, ListadoPostes.class);
                             startActivity(intent);
                         }

@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Mon Feb 13 11:47:51 COT 2017
+#Mon Feb 13 13:04:45 COT 2017
 5.base=D\:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\build\\intermediates\\res\\resources-debug.ap_
 42.base=D\:\\Users\\razerjon24\\AndroidProjects\\Etiquetador\\app\\build\\intermediates\\res\\resources-debug.ap_
 32.set=ANDROID_RESOURCE
